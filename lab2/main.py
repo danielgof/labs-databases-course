@@ -1,4 +1,3 @@
-from numpy import sort
 import pandas as pd
 
 
@@ -19,5 +18,3 @@ sort_data = data.sort_values(by=['town', 'lat', 'ing', 'accident_time', 'title']
 """4."""
 new_df = sort_data.town.value_counts(ascending=True)
 print(new_df)
-# print([i for i in sorted(list(new_df))])
-# print([sort_data[i].value_counts() for i in sort_data.town.unique()])

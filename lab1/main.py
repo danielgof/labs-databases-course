@@ -207,13 +207,13 @@ class Main:
                 next_step = self.read_next_step()
                 current_menu = self.after_main_menu(next_step)
             if current_menu == "1":
-                self.show_positions()
+                self.show()
                 next_step = self.read_next_step()
                 current_menu = self.after_show_people(next_step)
-            elif current_menu == "10":
-                self.show()
-                # next_step = self.read_next_step()
-                # current_menu = self.after_show_people(next_step)
+            # elif current_menu == "10":
+            #     self.show()
+            #     # next_step = self.read_next_step()
+            #     # current_menu = self.after_show_people(next_step)
             elif current_menu == "2":
                 self.show_main_menu()
             elif current_menu == "3":
