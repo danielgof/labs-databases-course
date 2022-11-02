@@ -33,7 +33,6 @@ class Database:
             id serial PRIMARY KEY,
             last_name varchar(32) NOT NULL,
             first_name varchar(32) NOT NULL,
-            second_name varchar(32) NOT NULL,
             position_id integer REFERENCES positions (id)
             );
 
@@ -49,6 +48,58 @@ class Database:
         except (Exception, Error) as error:
             print("Ошибка при работе с PostgreSQL", error)
 
+    def all_persons_data(connection):
+        try:
+            people = []
+            cursor = connection.cursor()
+            """show all data about people"""
+            create_table_query = """select * from people;"""
+            cursor.execute(create_table_query)
+            res = cursor.fetchall()
+            for r in range(len(res)):
+              d = {'id':'', 'last_name': '', 'first_name': '', 'position_id': ''}
+              d["id"] = res[r][0]
+              d["last_name"] = res[r][1]
+              d["first_name"] = res[r][2]
+              d["position_id"] = res[r][3]
+              people.append(d)
+            return people
+        except (Exception, Error) as error:
+            print("Ошибка при работе с PostgreSQL", error)
 
-connection = Database.connect()
-Database.create(connection)
+    def delete_person(connection, id):
+        try:
+            cursor = connection.cursor()
+            create_table_query = f"""delete from people where id={id};"""
+            cursor.execute(create_table_query)
+            connection.commit()
+            # Close communication with the PostgreSQL database
+            cursor.close()
+            # res = cursor.fetchall()
+            return f"person with {id} id deleted"
+        except (Exception, Error) as error:
+            print("Ошибка при работе с PostgreSQL", error)
+
+
+    def get_number(connection, id):
+        try:
+            phones = []
+            cursor = connection.cursor()
+            """show all data about people"""
+            create_table_query = f"""select * from phones where person_id={id};"""
+            cursor.execute(create_table_query)
+            res = cursor.fetchall()
+            for r in range(len(res)):
+              d = {'person_id':'', 'phone_num': ''}
+              d["person_id"] = res[r][0]
+              d["phone_num"] = res[r][1]
+              phones.append(d)
+            return phones
+        except (Exception, Error) as error:
+            print("Ошибка при работе с PostgreSQL", error)
+
+# connection = Database.connect()
+# # Database.create(connection)
+# # Database.all_persons_data(connection)
+# Database.delete_person(connection, 4)
+# Database.get_number(connection, 3)
