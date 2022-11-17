@@ -17,7 +17,6 @@ const GetUsersData = () => {
               console.log(response);
               getData(response);
           })
-
   }
 
   return (

@@ -1,105 +1,73 @@
-import psycopg2
-from psycopg2 import Error
+from sqlalchemy import Column, ForeignKey, String, Integer
+from sqlalchemy.orm import sessionmaker
+from sqlalchemy import create_engine
+from sqlalchemy.ext.declarative import declarative_base
 
-class Database:
-    """функция инициализации подключения"""
-    def connect():
-        try:
-            connection = psycopg2.connect(user="postgres",
-                                    password="admin",  
-                                    host="127.0.0.1",
-                                    port="5432",
-                                    database="lab")
-            print("conect to db successfully")
-            return connection
-        except (Exception, Error) as error:
-            print("Ошибка при работе с PostgreSQL", error)
+engine = create_engine('postgresql://postgres:admin@localhost:5432/lab')
+Session = sessionmaker(bind=engine)
+print("session created succesfully")
 
-    """создание таблиц"""
-    def create(connection):
-        try:
-            cursor = connection.cursor()
-            """query create table"""
-            create_table_query = """
-            DROP TABLE IF EXISTS positions;
-            CREATE TABLE positions (
-            id serial PRIMARY KEY,
-            department varchar(32) NOT NULL,
-            salary varchar(32) NOT NULL,
-            position varchar(32));
+"""Create a base class"""
+Base = declarative_base()
+"""Tables"""
+"""1.Positons"""
+class Positon(Base):
+    __tablename__ = "position"
+    id = Column(Integer, primary_key=True)
+    departament = Column(String)
+    salary = Column(String)
+    position = Column(String)
 
-            DROP TABLE IF EXISTS people;
-            CREATE TABLE people (
-            id serial PRIMARY KEY,
-            last_name varchar(32) NOT NULL,
-            first_name varchar(32) NOT NULL,
-            position_id integer REFERENCES positions (id)
-            );
+    def __init__(self, department, salary, position):
+        self.department = department
+        self.salary = salary
+        self.position = position
 
-            DROP TABLE IF EXISTS phones;
-            CREATE TABLE phones (
-            person_id integer REFERENCES people (id),
-            phone varchar(12) NOT NULL);
-            """
-            # Выполнение команды: это создает новую таблицу
-            cursor.execute(create_table_query)
-            connection.commit()
-            print("Таблица успешно создана в PostgreSQL")
-        except (Exception, Error) as error:
-            print("Ошибка при работе с PostgreSQL", error)
+"""2.People"""
+class People(Base):
+    __tablename__ = "people"
+    id = Column(Integer, primary_key=True)
+    last_name = Column(String)
+    first_name = Column(String)
+    position_id = Column(Integer, ForeignKey("position.id"))
 
-    def all_persons_data(connection):
-        try:
-            people = []
-            cursor = connection.cursor()
-            """show all data about people"""
-            create_table_query = """select * from people;"""
-            cursor.execute(create_table_query)
-            res = cursor.fetchall()
-            for r in range(len(res)):
-              d = {'id':'', 'last_name': '', 'first_name': '', 'position_id': ''}
-              d["id"] = res[r][0]
-              d["last_name"] = res[r][1]
-              d["first_name"] = res[r][2]
-              d["position_id"] = res[r][3]
-              people.append(d)
-            return people
-        except (Exception, Error) as error:
-            print("Ошибка при работе с PostgreSQL", error)
-
-    def delete_person(connection, id):
-        try:
-            cursor = connection.cursor()
-            create_table_query = f"""delete from people where id={id};"""
-            cursor.execute(create_table_query)
-            connection.commit()
-            # Close communication with the PostgreSQL database
-            cursor.close()
-            # res = cursor.fetchall()
-            return f"person with {id} id deleted"
-        except (Exception, Error) as error:
-            print("Ошибка при работе с PostgreSQL", error)
+    def __init__(self, last_name, first_name, position_id):
+        self.last_name = last_name
+        self.first_name = first_name
+        self.position_id = position_id
 
 
-    def get_number(connection, id):
-        try:
-            phones = []
-            cursor = connection.cursor()
-            """show all data about people"""
-            create_table_query = f"""select * from phones where person_id={id};"""
-            cursor.execute(create_table_query)
-            res = cursor.fetchall()
-            for r in range(len(res)):
-              d = {'person_id':'', 'phone_num': ''}
-              d["person_id"] = res[r][0]
-              d["phone_num"] = res[r][1]
-              phones.append(d)
-            return phones
-        except (Exception, Error) as error:
-            print("Ошибка при работе с PostgreSQL", error)
+"""3.Phones"""
+class Phone(Base):
+    __tablename__ = "phone"
+    id = Column(Integer, primary_key=True)
+    person_id = Column(Integer, ForeignKey("people.id"))
+    phone = Column(String)
 
-# connection = Database.connect()
-# # Database.create(connection)
-# # Database.all_persons_data(connection)
-# Database.delete_person(connection, 4)
-# Database.get_number(connection, 3)
+    def __init__(self, person_id, phone):
+        self.person_id = person_id
+        self.phone = phone
+
+Base.metadata.create_all(engine)
+
+# CEO = Positon("-", "1000000", "CEO")
+# CTO = Positon("-", "600000", "CTO")
+# SE = Positon("cloud media", "200000", "SE")
+
+Richard = People("Handrix", "Richard", 1)
+Jared = People("Dunn", "Jared", 2)
+Dinesh = People("Chuktai", "Dinesh", 3)
+Gilfoyel = People("Burtram", "Gilfoyel", 3)
+
+session = Session()
+# session.add(CEO)
+# session.add(CTO)
+# session.add(SE)
+
+session.add(Richard)
+session.add(Jared)
+session.add(Dinesh)
+session.add(Gilfoyel)
+
+session.commit()
+session.close()

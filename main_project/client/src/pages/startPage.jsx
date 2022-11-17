@@ -5,7 +5,7 @@ const StartPage = () => {
   return (
     <div>
         <img src={logo} className="App-logo" alt="logo" />
-        <p>Начальная страница</p>
+        <h2>Начальная страница</h2>
         <a href="/phones" >
             <button className="Btn">
             Номера телефонов
