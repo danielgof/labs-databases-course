@@ -1,3 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:ital@1&display=swap');
+
+*{
+  font-family: 'PT Sans', sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 .App {
   text-align: center;
 }
@@ -14,7 +23,7 @@
 }
 
 .App-header {
-  background-color: #355492;
+  background-color: #144194;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -27,15 +36,6 @@
 .App-link {
   color: #61dafb;
 }
-
-/* @keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-} */
 
 table {
   font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
@@ -67,7 +67,7 @@ th:last-child {
 }
 td {
   padding: 10px 20px;
-  background: #F8E391;
+  background: rgb(81, 170, 40);
 }
 tr:last-child td:first-child {
   border-radius: 0 0 0 10px;
@@ -86,7 +86,7 @@ button {
   color: white;
   text-shadow: 0 1px 1px #2D2020;
   padding: 10px 20px;
-  background: #F8E391;
+  background: #d10e0e;
 }
 
 p {
@@ -96,5 +96,5 @@ p {
   color: white;
   text-shadow: 0 1px 1px #2D2020;
   padding: 10px 20px;
-  background: #F8E391;
+  background: #d10e0e;
 }

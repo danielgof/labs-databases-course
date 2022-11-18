@@ -1,9 +1,11 @@
 import React from 'react';
+// import NavBar from '../components/NavBar';
 import logo from './logo.png';
 
 const StartPage = () => {
   return (
     <div>
+        {/* <NavBar /> */}
         <img src={logo} className="App-logo" alt="logo" />
         <h2>Начальная страница</h2>
         <a href="/phones" >

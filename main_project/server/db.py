@@ -14,12 +14,12 @@ Base = declarative_base()
 class Positon(Base):
     __tablename__ = "position"
     id = Column(Integer, primary_key=True)
-    departament = Column(String)
-    salary = Column(String)
-    position = Column(String)
+    departament = Column(String, nullable=False)
+    salary = Column(String, nullable=False)
+    position = Column(String, nullable=False)
 
-    def __init__(self, department, salary, position):
-        self.department = department
+    def __init__(self, departament, salary, position):
+        self.departament = departament
         self.salary = salary
         self.position = position
 
@@ -27,8 +27,8 @@ class Positon(Base):
 class People(Base):
     __tablename__ = "people"
     id = Column(Integer, primary_key=True)
-    last_name = Column(String)
-    first_name = Column(String)
+    last_name = Column(String, nullable=False)
+    first_name = Column(String, nullable=False)
     position_id = Column(Integer, ForeignKey("position.id"))
 
     def __init__(self, last_name, first_name, position_id):
@@ -42,7 +42,7 @@ class Phone(Base):
     __tablename__ = "phone"
     id = Column(Integer, primary_key=True)
     person_id = Column(Integer, ForeignKey("people.id"))
-    phone = Column(String)
+    phone = Column(String, nullable=False)
 
     def __init__(self, person_id, phone):
         self.person_id = person_id
@@ -50,24 +50,34 @@ class Phone(Base):
 
 Base.metadata.create_all(engine)
 
-# CEO = Positon("-", "1000000", "CEO")
-# CTO = Positon("-", "600000", "CTO")
-# SE = Positon("cloud media", "200000", "SE")
+# CEO = Positon("all", "1000000", "CEO") 
+# CTO = Positon("all", "650000", "CTO")
+# SE = Positon("cloud storage", "250000", "SE")
 
-Richard = People("Handrix", "Richard", 1)
-Jared = People("Dunn", "Jared", 2)
-Dinesh = People("Chuktai", "Dinesh", 3)
-Gilfoyel = People("Burtram", "Gilfoyel", 3)
+# Richard = People("Handrix", "Richard", 1)
+# Jared = People("Dunn", "Jared", 2)
+# Dinesh = People("Chuktai", "Dinesh", 3)
+# Gilfoyel = People("Burtram", "Gilfoyel", 3)
 
-session = Session()
-# session.add(CEO)
-# session.add(CTO)
-# session.add(SE)
+# Richard_phone = Phone(13, "+1**********")
+# Jared_phone = Phone(14, "+1**********")
+# Dinesh_phone = Phone(15, "+1**********")
+# Gilfoyel_phone = Phone(16, "+1**********")
 
-session.add(Richard)
-session.add(Jared)
-session.add(Dinesh)
-session.add(Gilfoyel)
+# session = Session()
+# # session.add(CEO)
+# # session.add(CTO)
+# # session.add(SE)
 
-session.commit()
-session.close()
+# session.add(Richard)
+# session.add(Jared)
+# session.add(Dinesh)
+# session.add(Gilfoyel)
+
+# session.add(Richard_phone )
+# session.add(Jared_phone )
+# session.add(Dinesh_phone )
+# session.add(Gilfoyel_phone )
+
+# session.commit()
+# session.close()

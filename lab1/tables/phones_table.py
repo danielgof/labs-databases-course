@@ -14,6 +14,7 @@ class PhonesTable(DbTable):
     def table_constraints(self):
         return ["PRIMARY KEY(person_id, phone)"]
 
+
     def all_by_person_id(self, pid):
         sql = "SELECT * FROM " + self.table_name()
         sql += " WHERE person_id = :id"
@@ -21,5 +22,6 @@ class PhonesTable(DbTable):
         sql += ", ".join(self.primary_key())
         cur = self.dbconn.conn.cursor()
         cur.execute(sql, str(pid))
+
         return cur.fetchall()           
 

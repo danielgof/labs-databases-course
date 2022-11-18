@@ -1,11 +1,11 @@
 import React from 'react'
-import GetPhoneNum from '../components/getPhoneNum'
+import GetPhoneNums from '../components/getPhoneNums'
 
 const Phones = () => {
   return (
     <div>
       <p>Номера телефонов</p>
-      <GetPhoneNum />
+      <GetPhoneNums />
       <a href="/" >
         <button className="Btn">
         Вернуться домой
