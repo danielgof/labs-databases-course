@@ -29,7 +29,10 @@ class PhonesTable(DbTable):
         sql += " VALUES ("
         sql += "{0},{1})".format(pid, str(phone))
         cur = self.dbconn.conn.cursor()
-        cur.execute(sql)
+        cur.execute(f'INSERT INTO {self.table_name()} VALUES (:pid' + f' , :phone)', {
+            'pid': pid,
+            'phone': str(phone)
+        })
         self.dbconn.conn.commit()
         return
 
@@ -38,6 +41,8 @@ class PhonesTable(DbTable):
         sql += " WHERE phone="
         sql += str(phone)
         cur = self.dbconn.conn.cursor()
-        cur.execute(sql)
+        cur.execute(f'DELETE FROM {self.table_name()} WHERE phone = :phone', {
+            'phone': phone
+        })
         self.dbconn.conn.commit()
         return

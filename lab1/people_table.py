@@ -1,5 +1,6 @@
 from dbtable import *
 
+
 class PeopleTable(DbTable):
     def table_name(self):
         return self.dbconn.prefix + "people"
@@ -19,12 +20,10 @@ class PeopleTable(DbTable):
         cur.execute(sql, {"offset": num - 1})
         return cur.fetchone()
 
-
     def delete_one(self, num):  # sql injection
-        sql = "DELETE FROM " + self.table_name()
-        sql += " WHERE id="
-        sql += str(num)
         cur = self.dbconn.conn.cursor()
-        cur.execute(sql)
+        cur.execute(f'DELETE FROM {self.table_name()} WHERE id = :id', {
+            'id': int(num)
+        })
         self.dbconn.conn.commit()
         return
