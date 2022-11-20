@@ -1,28 +1,12 @@
 import React from 'react';
-// import NavBar from '../components/NavBar';
-import logo from './logo.png';
+
 
 const StartPage = () => {
   return (
-    <div>
-        {/* <NavBar /> */}
-        <img src={logo} className="App-logo" alt="logo" />
+    <div className='container'>
+      <div className='block'>
         <h2>Начальная страница</h2>
-        <a href="/phones" >
-            <button className="Btn">
-            Номера телефонов
-            </button>
-        </a>
-        <a href="/users" >
-            <button className="Btn">
-            Данные о сотрудниках
-            </button>
-        </a>
-        <a href="/positions" >
-            <button className="Btn">
-            Должности
-            </button>
-        </a>
+      </div>
     </div>
   )
 }

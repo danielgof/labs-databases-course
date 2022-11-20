@@ -1,4 +1,6 @@
+@import "bootstrap/dist/css/bootstrap.css";
 @import url('https://fonts.googleapis.com/css2?family=PT+Sans:ital@1&display=swap');
+
 
 *{
   font-family: 'PT Sans', sans-serif;
@@ -97,4 +99,10 @@ p {
   text-shadow: 0 1px 1px #2D2020;
   padding: 10px 20px;
   background: #d10e0e;
+}
+
+
+.block {
+  text-align:center;
+  margin-top: 20%;
 }
