@@ -1,15 +1,31 @@
-import sqlite3
+import psycopg2
+from psycopg2 import Error
+from config import * 
+
 
 class DbConnection:
 
     def __init__(self, config):
-        self.path = config.dbfilepath
-        self.prefix = config.dbtableprefix
-        self.conn = sqlite3.connect(self.path)
+        
+        self.user = config.user
+        self.password = config.password
+        self.host = config.host
+        self.port = config.port
+        self.database = config.database
+
+        self.conn = psycopg2.connect(
+                user=self.user,
+                password=self.password,  
+                host=self.host,
+                port=self.port,
+                database=self.database
+                )
+
 
     def __del__(self):
         if self.conn:
             self.conn.close()
+
 
     def test(self):
         cur = self.conn.cursor()
