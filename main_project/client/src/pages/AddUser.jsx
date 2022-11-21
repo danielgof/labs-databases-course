@@ -2,8 +2,10 @@ import React from 'react';
 
 const AddUser = () => {
   return (
-    <div>
-      <p>add user</p>
+    <div className='container'>
+      <div className='block'>
+        <h2>Добавить пользователя</h2>
+      </div>
     </div>
   )
 }
