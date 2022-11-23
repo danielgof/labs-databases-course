@@ -6,7 +6,7 @@ import logo from './logo.jpg';
 
 import MainPage from '../pages/startPage';
 import Users from '../pages/Users';
-import AddUser from "../pages/AddUser";
+import AddUser from "../pages/RegUser";
 
 const Header = () => {
   return (

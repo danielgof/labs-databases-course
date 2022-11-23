@@ -46,14 +46,14 @@ def all_positions():
 
     return res
 
-@app.route("/phone_num", methods=["GET", "POST"])
+@app.route("/api/phone_num", methods=["GET", "POST"])
 def show_phone_num():
     input_json = request.get_json(force=True)
     data = session.query(Phone).filter(Phone.person_id == input_json["person_id"]).first()
     print(data.phone)
     return jsonify({"phone_number": data.phone})
 
-@app.route("/add_person", methods=["POST"])
+@app.route("/api/add_person", methods=["POST"])
 def add_person():
     data = request.get_json(force=True)
     person = People(data["last_name"], data["first_name"], 3)
@@ -61,7 +61,7 @@ def add_person():
     session.commit()
     return jsonify({"result": "succes"})
 
-@app.route("/delete_by_id", methods=["DELETE"])
+@app.route("/api/delete_by_id", methods=["DELETE"])
 def delete_person():
     data = request.get_json(force=True)
     session.query(People).filter(People.id == data["id"]).delete()
