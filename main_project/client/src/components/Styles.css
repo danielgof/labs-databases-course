@@ -1,3 +1,6 @@
-.person-cards {
+.person-cards card-text {
     text-align: left;
+    background-color: rgb(97, 146, 189);
+    border-color: crimson;
+
 }

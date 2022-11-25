@@ -9,15 +9,21 @@ const PersonCard = () => {
   const toggleShowA = () => setShowA(!showA);
   return (
     <Card style={{ textAlign:'left' }}>
-      <Card.Img variant="top" src="holder.js/100px180" />
+      {/* <Card.Img variant="top" src="holder.js/100px180" /> */}
       <Card.Body>
-        <Card.Title>Position Title</Card.Title>
-        <Card.Text className='person-cards'>
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
+        <Card.Title>Инженер ПО</Card.Title>
+        <Card.Text style={{ textAlign: 'left',
+                backgroundColor: 'rgb(97, 146, 189)'
+        }}>
+          Имя: Александр
+          <br />
+          Фамилия: Пушкин
         </Card.Text>
-          <Button onClick={toggleShowA} className="mb-2">
-            Toggle Toast <strong>with</strong> Animation
+          <Button style={{ textAlign: 'left',
+                backgroundColor: 'rgb(97, 146, 189)'
+            }}
+            onClick={toggleShowA} className="mb-2">
+            Дополнительная информация
           </Button>
           <Toast show={showA} onClose={toggleShowA}>
             <Toast.Header>
@@ -26,10 +32,15 @@ const PersonCard = () => {
                 className="rounded me-2"
                 alt=""
               />
-              <strong className="me-auto">Bootstrap</strong>
-              <small>11 mins ago</small>
+              <strong className="me-auto">Доп.инфа</strong>
             </Toast.Header>
-            <Toast.Body>Woohoo, you're reading this text in a Toast!</Toast.Body>
+            <Toast.Body>
+              Зарплата: 700.000
+              <br />
+              Отдел: Технической поддержки пользователей
+              <br />
+              Номер телефона: +7 800 500 4000
+            </Toast.Body>
           </Toast>
       </Card.Body>
     </Card>
