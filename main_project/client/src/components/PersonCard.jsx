@@ -3,7 +3,7 @@ import Button from 'react-bootstrap/Button';
 import Toast from 'react-bootstrap/Toast';
 import Card from 'react-bootstrap/Card';
 
-const PersonCard = () => {
+const PersonCard = (props) => {
   const [showA, setShowA] = useState(false);
 
   const toggleShowA = () => setShowA(!showA);
@@ -11,13 +11,15 @@ const PersonCard = () => {
     <Card style={{ textAlign:'left' }}>
       {/* <Card.Img variant="top" src="holder.js/100px180" /> */}
       <Card.Body>
-        <Card.Title>Инженер ПО</Card.Title>
+        <Card.Title>
+          {props.position}
+        </Card.Title>
         <Card.Text style={{ textAlign: 'left',
                 backgroundColor: 'rgb(97, 146, 189)'
         }}>
-          Имя: Александр
+          Имя: {props.name}
           <br />
-          Фамилия: Пушкин
+          Фамилия: {props.lastname}
         </Card.Text>
           <Button style={{ textAlign: 'left',
                 backgroundColor: 'rgb(97, 146, 189)'
@@ -35,11 +37,11 @@ const PersonCard = () => {
               <strong className="me-auto">Доп.инфа</strong>
             </Toast.Header>
             <Toast.Body>
-              Зарплата: 700.000
+              Зарплата: {props.salary}
               <br />
-              Отдел: Технической поддержки пользователей
+              Отдел: {props.department}
               <br />
-              Номер телефона: +7 800 500 4000
+              Номер телефона: {props.phone}
             </Toast.Body>
           </Toast>
       </Card.Body>
