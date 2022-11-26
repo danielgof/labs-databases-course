@@ -9,17 +9,26 @@ app = Flask(__name__)
 CORS(app)
 
 
-@app.route("/get_all_people_data", methods=["GET"])
+@app.route("/api/v1/get_all_people_data", methods=["GET"])
 def get_all_data():    
     data = session.query(People).all()
     res = list()
     for person in data:
+        phone_num = session.query(Phone).filter(Phone.person_id == person.id).first()
+        position = session.query(Positon).filter(Positon.id == person.position_id).first()
+        if position == None:
+            continue
+        if phone_num == None:
+            continue
         res.append({
+        "position": position.position,
         "last_name": person.last_name,
         "first_name": person.first_name,
-        "position_id": person.position_id
+        "salary": position.salary,
+        "department": position.departament,
+        "phone": phone_num.phone
         })
-    return res
+    return res 
     # return jsonify({"result": res})
 
 @app.route("/get_all_phone_num", methods=["GET"])
@@ -46,7 +55,7 @@ def all_positions():
 
     return res
 
-@app.route("/api/phone_num", methods=["GET", "POST"])
+@app.route("/api/v1/phone_num", methods=["GET", "POST"])
 def show_phone_num():
     input_json = request.get_json(force=True)
     data = session.query(Phone).filter(Phone.person_id == input_json["person_id"]).first()
