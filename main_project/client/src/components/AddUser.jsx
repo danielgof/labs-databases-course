@@ -2,8 +2,11 @@ import { useState } from "react";
 
 const AddUser = () => {
   
-  const [name, setName] = useState("");
+  const [firstname, setName] = useState("");
   const [lastname, setLastname] = useState("");
+  const [position, setPosition] = useState("");
+  const [departament, setDepartment] = useState("");
+  const [salary, setSalary] = useState("");
   const [phonenumber, setPhonenumber] = useState("");
   const [message, setMessage] = useState("");
 
@@ -11,8 +14,11 @@ const AddUser = () => {
     e.preventDefault();
     try {
     const body = JSON.stringify({
-      name: name,
+      firstname: firstname,
       lastname: lastname,
+      position: position,
+      departament: departament,
+      salary: salary,
       phonenumber: phonenumber
     })
 
@@ -21,11 +27,14 @@ const AddUser = () => {
         "Content-Length": JSON.stringify(body).length
     })
       console.log(JSON.stringify({
-        name: name,
-        lastname: lastname,
-        phonenumber: phonenumber
+      firstname: firstname,
+      lastname: lastname,
+      position: position,
+      departament: departament,
+      salary: salary,
+      phonenumber: phonenumber
       }))
-      let res = await fetch("http://localhost:5000/api/add_person", {
+      let res = await fetch("http://localhost:5000/api/v1/add_person", {
         method: "POST",
         mode: "cors",
         headers: headers,
@@ -36,6 +45,9 @@ const AddUser = () => {
         setName("");
         setLastname("");
         setPhonenumber("");
+        setPosition("");
+        setDepartment("");
+        setSalary("");
         setMessage("User added to database successfully");
         // navigate("/home");
       } 
@@ -52,20 +64,38 @@ const AddUser = () => {
       <form onSubmit={handleSubmit}>
         <input
           type="text"
-          value={name}
-          placeholder="name"
+          value={firstname}
+          placeholder="имя"
           onChange={(e) => setName(e.target.value)}
         />
         <input
           type="text"
           value={lastname}
-          placeholder="lastname"
+          placeholder="фамилия"
           onChange={(e) => setLastname(e.target.value)}
         />
         <input
           type="text"
+          value={position}
+          placeholder="должность"
+          onChange={(e) => setPosition(e.target.value)}
+        />
+        <input
+          type="text"
+          value={departament}
+          placeholder="отдел"
+          onChange={(e) => setDepartment(e.target.value)}
+        />
+        <input
+          type="text"
+          value={salary}
+          placeholder="зарплата"
+          onChange={(e) => setSalary(e.target.value)}
+        />
+        <input
+          type="text"
           value={phonenumber}
-          placeholder="phonenumber"
+          placeholder="номер телефона"
           onChange={(e) => setPhonenumber(e.target.value)}
         />
 

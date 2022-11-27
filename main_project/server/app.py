@@ -55,6 +55,7 @@ def all_positions():
 
     return res
 
+
 @app.route("/api/v1/phone_num", methods=["GET", "POST"])
 def show_phone_num():
     input_json = request.get_json(force=True)
@@ -62,13 +63,37 @@ def show_phone_num():
     print(data.phone)
     return jsonify({"phone_number": data.phone})
 
-@app.route("/api/add_person", methods=["POST"])
+
+@app.route("/api/v1/add_person", methods=["POST"])
 def add_person():
     data = request.get_json(force=True)
-    person = People(data["last_name"], data["first_name"], 3)
+    print(data)
+    position = Positon(
+        data["departament"],
+        data["salary"],
+        data["position"]
+    )
+    session.add(position)
+    session.commit()
+    data1 = session.query(Positon) \
+    .filter(Positon.position == data["position"]).first()
+    person = People(
+        data["lastname"], 
+        data["firstname"],
+        data1.id
+    )
     session.add(person)
     session.commit()
+    data2 = session.query(People)\
+    .filter(People.first_name == data["firstname"]).first()
+    phone = Phone(
+        data2.id,
+        data["phonenumber"]
+    )
+    session.add(phone)
+    session.commit()
     return jsonify({"result": "succes"})
+
 
 @app.route("/api/delete_by_id", methods=["DELETE"])
 def delete_person():
@@ -76,20 +101,6 @@ def delete_person():
     session.query(People).filter(People.id == data["id"]).delete()
     session.commit()
     return jsonify({"result":"success"})
-
-# @app.route("delete_person", methods=["DELETE"])
-# def delete_person():
-#     pass
-
-
-# @app.route("add_num", methods=["POST"])
-# def add_new_number():
-#     pass
-
-
-# @app.route()
-# def del_number():
-    pass
 
 
 if __name__ == "__main__":

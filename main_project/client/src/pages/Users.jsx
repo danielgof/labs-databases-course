@@ -34,6 +34,7 @@ const Users = () => {
             department={item.departament}
             phone={item.phone}
             />
+            <br></br>
           </div>
         ))}
       </div>
