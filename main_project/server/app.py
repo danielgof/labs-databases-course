@@ -4,7 +4,6 @@ from flask_cors import CORS
 from db import *
 
 session = Session()
-
 app = Flask(__name__)
 CORS(app)
 
@@ -31,37 +30,6 @@ def get_all_data():
     return res 
     # return jsonify({"result": res})
 
-@app.route("/get_all_phone_num", methods=["GET"])
-def all_phones():
-    data = session.query(Phone).all()
-    res = list()
-    for number in data:
-        res.append({
-        "person_id": number.person_id,
-        "phone": number.phone
-        })
-    return res
-
-@app.route("/get_all_positions", methods=["GET"])
-def all_positions():
-    data = session.query(Positon).all()
-    res = list()
-    for position in data:
-        res.append({
-        "department": position.departament,
-        "salary": position.salary,
-        "position": position.position
-        })
-
-    return res
-
-
-@app.route("/api/v1/phone_num", methods=["GET", "POST"])
-def show_phone_num():
-    input_json = request.get_json(force=True)
-    data = session.query(Phone).filter(Phone.person_id == input_json["person_id"]).first()
-    print(data.phone)
-    return jsonify({"phone_number": data.phone})
 
 
 @app.route("/api/v1/add_person", methods=["POST"])
@@ -95,13 +63,52 @@ def add_person():
     return jsonify({"result": "succes"})
 
 
-@app.route("/api/delete_by_id", methods=["DELETE"])
+@app.route("/api/v1/delete_person", methods=["DELETE"])
 def delete_person():
     data = request.get_json(force=True)
-    session.query(People).filter(People.id == data["id"]).delete()
+    phone = session.query(Phone).filter(Phone.phone == data["phonenumber"]).first()
+    person_id = phone.person_id
+    session.query(Phone).filter(Phone.phone == data["phonenumber"]).delete()
+    session.commit()
+    session.query(People).filter(People.id == person_id).delete()
     session.commit()
     return jsonify({"result":"success"})
 
 
 if __name__ == "__main__":
     app.run()
+
+
+
+
+# @app.route("/get_all_phone_num", methods=["GET"])
+# def all_phones():
+#     data = session.query(Phone).all()
+#     res = list()
+#     for number in data:
+#         res.append({
+#         "person_id": number.person_id,
+#         "phone": number.phone
+#         })
+#     return res
+
+# @app.route("/get_all_positions", methods=["GET"])
+# def all_positions():
+#     data = session.query(Positon).all()
+#     res = list()
+#     for position in data:
+#         res.append({
+#         "department": position.departament,
+#         "salary": position.salary,
+#         "position": position.position
+#         })
+
+#     return res
+
+
+# @app.route("/api/v1/phone_num", methods=["GET", "POST"])
+# def show_phone_num():
+#     input_json = request.get_json(force=True)
+#     data = session.query(Phone).filter(Phone.person_id == input_json["person_id"]).first()
+#     print(data.phone)
+#     return jsonify({"phone_number": data.phone})

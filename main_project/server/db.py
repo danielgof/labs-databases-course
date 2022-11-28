@@ -42,7 +42,7 @@ class Phone(Base):
     __tablename__ = "phone"
     id = Column(Integer, primary_key=True)
     person_id = Column(Integer, ForeignKey("people.id"))
-    phone = Column(String, nullable=False)
+    phone = Column(String, nullable=False, index=True, unique=True)
 
     def __init__(self, person_id, phone):
         self.person_id = person_id
