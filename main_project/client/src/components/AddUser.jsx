@@ -60,8 +60,8 @@ const AddUser = () => {
   };
 
   return (
-    <div className="Login">
-      <form onSubmit={handleSubmit}>
+    <div className="add-user">
+      <form className="add-user-form" onSubmit={handleSubmit}>
         <input
           type="text"
           value={firstname}
@@ -99,7 +99,9 @@ const AddUser = () => {
           onChange={(e) => setPhonenumber(e.target.value)}
         />
 
-        <button type="submit">Add user</button>
+        <button className="btn-add-user" type="submit">
+          Add user
+        </button>
 
         <div className="message">{message ? <p>{message}</p> : null}</div>
       </form>
