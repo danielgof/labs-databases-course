@@ -48,7 +48,8 @@ const PersonCard = (props, {data}) => {
       <Card.Body>
         <Card.Title>
           {props.position}
-          <CloseButton className='delete-person' onClick={handleClick} aria-label="Hide" />
+          <CloseButton className='delete-person'
+          onClick={handleClick} />
         </Card.Title>
         <Card.Text className='text-card'>
           Имя: {props.name}

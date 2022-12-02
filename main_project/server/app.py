@@ -28,8 +28,6 @@ def get_all_data():
         "phone": phone_num.phone
         })
     return res 
-    # return jsonify({"result": res})
-
 
 
 @app.route("/api/v1/add_person", methods=["POST"])
@@ -71,6 +69,18 @@ def delete_person():
     session.query(Phone).filter(Phone.phone == data["phonenumber"]).delete()
     session.commit()
     session.query(People).filter(People.id == person_id).delete()
+    session.commit()
+    return jsonify({"result":"success"})
+
+
+@app.route("/api/v1/upd_phone", methods=["PUT"])
+def upd_phone():
+    data = request.get_json(force=True)
+    # print(data["phonenumber"])
+    phone = session.query(Phone)\
+    .filter(Phone.phone == data["phonenumber_old"])\
+    .update({Phone.phone: data["phonenumber_new"]}, synchronize_session = False)
+    print(phone)
     session.commit()
     return jsonify({"result":"success"})
 

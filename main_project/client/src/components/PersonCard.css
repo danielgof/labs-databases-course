@@ -13,6 +13,18 @@
     border-color: aliceblue;
 }
 
+.delete-person {
+    text-align: right;
+}
+
 .delete-person:hover {
     background-color: rgb(255, 0, 0);
+}
+
+.title {
+    text-align: left;
+}
+
+.container {
+    text-align:center;
 }
