@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import PersonCard from '../components/PersonCard';
 import ReactPaginate from 'react-paginate';
+import './UsersPage.css';
 
 const UsersPage = ({ itemsPerPage }) => {
 
@@ -51,13 +52,23 @@ const UsersPage = ({ itemsPerPage }) => {
           </div>
         ))}
         <ReactPaginate
-        // breakLabel="..."
+        breakLabel="..."
         nextLabel="next >"
         onPageChange={handlePageClick}
         pageRangeDisplayed={5}
         pageCount={pageCount}
         previousLabel="< previous"
         renderOnZeroPageCount={null}
+        breakLinkClassName="page-link"
+        containerClassName="pagination"
+        pageClassName="page-item"
+        pageLinkClassName="page-link"
+        previousClassName="page-item"
+        previousLinkClassName="page-link"
+        nextClassName="page-item"
+        nextLinkClassName="page-link"
+        activeClassName="active"
+        subContainerClassName="pages pagination"
         />
       </div>
     </div>

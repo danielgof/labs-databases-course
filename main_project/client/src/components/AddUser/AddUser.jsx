@@ -1,4 +1,5 @@
 import { useState } from "react";
+import './AddUser.css'
 
 const AddUser = () => {
   
@@ -62,6 +63,12 @@ const AddUser = () => {
   return (
     <div className="add-user">
       <form className="add-user-form" onSubmit={handleSubmit}>
+        <input
+          type="text"
+          value={firstname}
+          placeholder="имя"
+          onChange={(e) => setName(e.target.value)}
+        />
         <input
           type="text"
           value={firstname}

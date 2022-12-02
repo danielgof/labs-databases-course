@@ -3,6 +3,7 @@ import CloseButton from 'react-bootstrap/CloseButton';
 import Button from 'react-bootstrap/Button';
 import Toast from 'react-bootstrap/Toast';
 import Card from 'react-bootstrap/Card';
+import './PersonCard.css';
 
 const PersonCard = (props, {data}) => {
   const [showA, setShowA] = useState(false);
@@ -42,24 +43,20 @@ const PersonCard = (props, {data}) => {
     }
   }
   return (
-    <Card style={{ textAlign:'left' }}>
+    <Card className='container'>
       {/* <Card.Img variant="top" src="holder.js/100px180" /> */}
       <Card.Body>
         <Card.Title>
           {props.position}
-          <CloseButton onClick={handleClick} aria-label="Hide" />
+          <CloseButton className='delete-person' onClick={handleClick} aria-label="Hide" />
         </Card.Title>
-        <Card.Text style={{ textAlign: 'left',
-          backgroundColor: 'rgb(97, 146, 189)'
-        }}>
+        <Card.Text className='text-card'>
           Имя: {props.name}
           <br />
           Фамилия: {props.lastname}
         </Card.Text>
-          <Button style={{ textAlign: 'left',
-                backgroundColor: 'rgb(97, 146, 189)'
-            }}
-            onClick={toggleShowA} className="mb-2">
+          <Button className='btn-dop-info'
+            onClick={toggleShowA}>
             Дополнительная информация
           </Button>
           <Toast show={showA} onClose={toggleShowA}>

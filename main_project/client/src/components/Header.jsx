@@ -3,7 +3,6 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import logo from './logo.jpg';
-import './AddUser.css'
 
 import MainPage from '../pages/MainPage';
 import Users from '../pages/Users';

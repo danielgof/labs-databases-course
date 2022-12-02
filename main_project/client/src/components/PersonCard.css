@@ -1,0 +1,18 @@
+.text-card {
+    text-align: left;
+    background-color: rgb(199, 218, 235);
+    color: rgb(255, 255, 255);
+    text-shadow: 5px;
+}
+
+.btn-dop-info {
+    text-align: left;
+    background-color: rgb(199, 218, 235);
+    border-radius: 8px;
+    box-shadow: 5px;
+    border-color: aliceblue;
+}
+
+.delete-person:hover {
+    background-color: rgb(255, 0, 0);
+}
