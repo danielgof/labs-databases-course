@@ -107,7 +107,7 @@ const AddUser = () => {
         />
 
         <button className="btn-add-user" type="submit">
-          Add user
+          Добавить пользователя
         </button>
 
         <div className="message">{message ? <p>{message}</p> : null}</div>

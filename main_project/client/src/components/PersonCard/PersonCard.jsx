@@ -67,6 +67,11 @@ const PersonCard = (props, {data}) => {
             onClick={toggleShowA}>
             Дополнительная информация
           </Button>
+          <Button className='btn-dop-info'>
+              <a href='upd_user'>
+                Изменить информацию пользователя
+              </a>
+          </Button>
           <Toast show={showA} onClose={toggleShowA}>
             <Toast.Header>
               <img
