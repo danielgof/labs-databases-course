@@ -3,10 +3,11 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import logo from './logo.jpg';
+import './Header.css';
 
-import MainPage from '../pages/MainPage';
-import Users from '../pages/Users';
-import AddUser from "../pages/RegUser";
+import MainPage from '../../pages/MainPage';
+import Users from '../../pages/Users';
+import AddUser from "../../pages/RegUser";
 
 const Header = () => {
   return (
@@ -16,14 +17,14 @@ const Header = () => {
           <Navbar.Brand href="/">
             <img 
               src={logo}
-              height="30"
-              width="30"
+              height="45"
+              width="45"
               className="d-inline-block align-top"
               alt="Logo"
             />
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
+          <Navbar.Collapse className="basic-navbar-nav">
             <Nav className="me-auto">
               <Nav.Link href="/users">Даннные о пользователях</Nav.Link>
               <Nav.Link href="/add_user">Добавить пользователя</Nav.Link>

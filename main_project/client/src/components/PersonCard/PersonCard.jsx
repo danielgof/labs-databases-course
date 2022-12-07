@@ -24,7 +24,7 @@ const PersonCard = (props, {data}) => {
       console.log(JSON.stringify({
         phonenumber: props.phone
       }))
-      let res = await fetch("http://localhost:5000/api/v1/delete_person", {
+      let res = await fetch("http://127.0.0.1:5000/api/v1/delete_person", {
         method: "DELETE",
         mode: "cors",
         headers: headers,
@@ -44,17 +44,24 @@ const PersonCard = (props, {data}) => {
   }
   return (
     <Card className='container'>
-      {/* <Card.Img variant="top" src="holder.js/100px180" /> */}
       <Card.Body>
         <Card.Title>
-          {props.position}
           <CloseButton className='delete-person'
           onClick={handleClick} />
         </Card.Title>
         <Card.Text className='text-card'>
-          Имя: {props.name}
-          <br />
-          Фамилия: {props.lastname}
+          <div className='person-card-img-container'>
+            <div className='person-card-img'>
+              <img src="https://eu.ui-avatars.com/api/?name=John+Doe&size=150" alt="avatar"/>
+            </div>
+            <div className='person-card-maindata'>
+              Должность: {props.position}
+              <br />
+              Имя: {props.name}
+              <br />
+              Фамилия: {props.lastname}
+            </div>
+          </div>
         </Card.Text>
           <Button className='btn-dop-info'
             onClick={toggleShowA}>

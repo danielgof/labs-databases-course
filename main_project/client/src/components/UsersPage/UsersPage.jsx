@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import PersonCard from '../components/PersonCard';
+import PersonCard from '../PersonCard/PersonCard';
 import ReactPaginate from 'react-paginate';
 import './UsersPage.css';
 

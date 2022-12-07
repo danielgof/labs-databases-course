@@ -15,6 +15,7 @@
 
 .delete-person {
     text-align: right;
+    margin-left: 95%;
 }
 
 .delete-person:hover {
@@ -27,4 +28,22 @@
 
 .container {
     text-align:center;
+}
+
+.person-card-img-container {
+    display: flex;
+    justify-content: center;
+}
+
+/* .person-card-maindata, .person-card-img {
+    display:inline;
+} */
+
+.person-card-maindata {
+    font-size: 30px;
+    margin-left: 15%;
+}
+
+.person-card-img img {
+    border-radius: 5px;
 }

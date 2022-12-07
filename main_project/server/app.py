@@ -85,9 +85,9 @@ def upd_phone():
     return jsonify({"result":"success"})
 
 
-@app.route("")
-def upd_():
-    pass
+# @app.route("")
+# def upd_():
+#     pass
 
 
 if __name__ == "__main__":
