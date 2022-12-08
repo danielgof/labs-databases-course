@@ -1,11 +1,35 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
+import time, redis
+import logging
+import os
+from datetime import datetime
 
 from db import *
 
 session = Session()
 app = Flask(__name__)
 CORS(app)
+cache = redis.Redis(host='127.0.0.1', port=6379)
+if not os.path.isdir("./log"):
+    os.mkdir("./log")
+logging.basicConfig(filename=f'./log/{datetime.today().strftime("%Y-%m-%d")}.log', level=logging.DEBUG, format=f'%(asctime)s %(levelname)s %(name)s %(threadName)s : %(message)s')
+
+# @app.route("/")
+# def hello():
+#     count = get_hit_counts()
+#     return f"I was visited {count} times"
+
+# def get_hit_counts():
+#     retries = 5
+#     while True:
+#         try:
+#             return cache.incr('hits')
+#         except redis.exceptions.ConnectionError as exc:
+#             if retries == 0:
+#                 raise exc
+#             retries -= 1
+#             time.sleep(0.5)
 
 
 @app.route("/api/v1/get_all_people_data", methods=["GET"])
@@ -27,6 +51,7 @@ def get_all_data():
         "department": position.departament,
         "phone": phone_num.phone
         })
+    app.logger.info("All users were selected from database")
     return res 
 
 
