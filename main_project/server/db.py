@@ -36,7 +36,6 @@ class People(Base):
         self.first_name = first_name
         self.position_id = position_id
 
-
 """3.Phones"""
 class Phone(Base):
     __tablename__ = "phone"

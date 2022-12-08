@@ -76,7 +76,6 @@ def delete_person():
 @app.route("/api/v1/upd_phone", methods=["PUT"])
 def upd_phone():
     data = request.get_json(force=True)
-    # print(data["phonenumber"])
     phone = session.query(Phone)\
     .filter(Phone.phone == data["phonenumber_old"])\
     .update({Phone.phone: data["phonenumber_new"]}, synchronize_session = False)
@@ -85,45 +84,31 @@ def upd_phone():
     return jsonify({"result":"success"})
 
 
-# @app.route("")
-# def upd_():
-#     pass
+@app.route("/api/v1/upd_firstname", methods=["PUT"])
+def upd_firstname():
+    data = request.get_json(force=True)
+    phone = session.query(Phone)\
+    .filter(Phone.phone == data["phonenumber"]).first()
+    personid = phone.person_id
+    person = session.query(People)\
+    .filter(People.id == personid)\
+    .update({People.first_name: data["firstname_new"]}, synchronize_session = False)
+    session.commit()
+    return jsonify({"result":"success"})
 
+
+@app.route("/api/v1/upd_position", methods=["PUT"])
+def upd_position():
+    data = request.get_json(force=True)
+    phone = session.query(Phone)\
+    .filter(Phone.phone == data["phonenumber"]).first()
+    personid = phone.person_id
+    person = session.query(People)\
+    .filter(People.id == personid)\
+    .update({People.position_id: data["position_new"]}, synchronize_session = False)
+    session.commit()
+    return jsonify({"result":"success"})
 
 if __name__ == "__main__":
     app.run()
 
-
-
-
-# @app.route("/get_all_phone_num", methods=["GET"])
-# def all_phones():
-#     data = session.query(Phone).all()
-#     res = list()
-#     for number in data:
-#         res.append({
-#         "person_id": number.person_id,
-#         "phone": number.phone
-#         })
-#     return res
-
-# @app.route("/get_all_positions", methods=["GET"])
-# def all_positions():
-#     data = session.query(Positon).all()
-#     res = list()
-#     for position in data:
-#         res.append({
-#         "department": position.departament,
-#         "salary": position.salary,
-#         "position": position.position
-#         })
-
-#     return res
-
-
-# @app.route("/api/v1/phone_num", methods=["GET", "POST"])
-# def show_phone_num():
-#     input_json = request.get_json(force=True)
-#     data = session.query(Phone).filter(Phone.person_id == input_json["person_id"]).first()
-#     print(data.phone)
-#     return jsonify({"phone_number": data.phone})

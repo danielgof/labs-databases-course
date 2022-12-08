@@ -71,12 +71,6 @@ const AddUser = () => {
         />
         <input
           type="text"
-          value={firstname}
-          placeholder="имя"
-          onChange={(e) => setName(e.target.value)}
-        />
-        <input
-          type="text"
           value={lastname}
           placeholder="фамилия"
           onChange={(e) => setLastname(e.target.value)}
