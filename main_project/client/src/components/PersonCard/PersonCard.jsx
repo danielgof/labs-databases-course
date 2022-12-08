@@ -4,12 +4,17 @@ import Button from 'react-bootstrap/Button';
 import Toast from 'react-bootstrap/Toast';
 import Card from 'react-bootstrap/Card';
 import './PersonCard.css';
+import UpdFirstname from '../UpdUser/UpdFirstname/UpdFirstname';
+import UpdLastname from '../UpdUser/UpdLastname/UpdLastname';
+import UpdPhonenum from '../UpdUser/UpdPhonenum/UpdPhonenum';
+
 
 const PersonCard = (props, {data}) => {
   const [showA, setShowA] = useState(false);
+  const [showB, setShowB] = useState(false);
   const [message, setMessage] = useState("");
   const toggleShowA = () => setShowA(!showA);
-
+  const toggleShowB = () => setShowB(!showB);
   const handleClick = async (e) => {
     e.preventDefault();
     try {
@@ -67,10 +72,9 @@ const PersonCard = (props, {data}) => {
             onClick={toggleShowA}>
             Дополнительная информация
           </Button>
-          <Button className='btn-dop-info'>
-              <a href='upd_user'>
-                Изменить информацию пользователя
-              </a>
+          <Button className='btn-dop-info'
+            onClick={toggleShowB}>
+            Изменить информацию пользователя
           </Button>
           <Toast show={showA} onClose={toggleShowA}>
             <Toast.Header>
@@ -87,6 +91,21 @@ const PersonCard = (props, {data}) => {
               Отдел: {props.department}
               <br />
               Номер телефона: {props.phone}
+            </Toast.Body>
+          </Toast>
+          <Toast show={showB} onClose={toggleShowB}>
+            <Toast.Header>
+              <img
+                src="holder.js/20x20?text=%20"
+                className="rounded me-2"
+                alt=""
+              />
+              <strong className="me-auto">Доп.инфа</strong>
+            </Toast.Header>
+            <Toast.Body>
+              <UpdFirstname phonenumber={props.phone}/>
+              <UpdLastname phonenumber={props.phone}/>
+              <UpdPhonenum phonenumber={props.phone}/>
             </Toast.Body>
           </Toast>
       </Card.Body>

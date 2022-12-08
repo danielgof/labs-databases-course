@@ -8,7 +8,6 @@ import './Header.css';
 import MainPage from '../../pages/MainPage/MainPage';
 import Users from '../../pages/Users';
 import AddUser from "../../pages/RegUser";
-import UpdUser from "../../pages/UpdUser";
 
 const Header = () => {
   return (
@@ -38,7 +37,6 @@ const Header = () => {
           <Route exact path="/" element={<MainPage />} />
           <Route exact path="/users" element={<Users />} />
           <Route exact path="/add_user" element={<AddUser />} />
-          <Route exact path="/upd_user" element={<UpdUser />} />
         </Routes>
       </BrowserRouter>
     </>
