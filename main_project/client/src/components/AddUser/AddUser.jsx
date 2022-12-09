@@ -51,6 +51,13 @@ const AddUser = () => {
     }
   };
 
+  const [category, setCategory] = useState('');
+
+  const handleCategoryChange = (category) => {
+     setCategory(category);
+     console.log(category);
+  }
+
   return (
     <div className="add-user">
       <form className="add-user-form" onSubmit={handleSubmit}>
@@ -77,6 +84,10 @@ const AddUser = () => {
             <option value="Boston">
             <option value="Cambridge">
           </datalist> */}
+        <select name="category" value={category} onChange={event => handleCategoryChange(event.target.value)}>
+          <option id="0" >Personal</option>
+          <option id="1" >Work</option>
+        </select>
         <input
           type="text"
           value={phonenumber}
