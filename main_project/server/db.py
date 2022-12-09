@@ -36,13 +36,12 @@ class People(Base):
         self.first_name = first_name
         self.position_id = position_id
 
-
 """3.Phones"""
 class Phone(Base):
     __tablename__ = "phone"
     id = Column(Integer, primary_key=True)
     person_id = Column(Integer, ForeignKey("people.id"))
-    phone = Column(String, nullable=False)
+    phone = Column(String, nullable=False, index=True, unique=True)
 
     def __init__(self, person_id, phone):
         self.person_id = person_id
@@ -84,6 +83,18 @@ Ralph_phone = Phone(9, "+13454568064")
 Eugene_phone = Phone(10, "+14552348787")
 Leon_phone = Phone(11, "+19887775465")
 Carl_phone = Phone(12, "+13459983467")
+# Richard_phone = Phone(1, "+154********")
+# Jared_phone = Phone(2, "+167********")
+# Dinesh_phone = Phone(3, "+1393*******")
+# Gilfoyel_phone = Phone(4, "+1*234*******")
+
+# session = Session()
+# session.add(CEO)
+# session.add(CTO)
+# session.add(SE)
+
+# session.commit()
+# session.close()
 
 session = Session()
 session.add(CEO)
@@ -94,8 +105,18 @@ session.add(Auditor)
 session.add(CAIO)
 session.add(DS)
 
+<<<<<<< HEAD
 session.commit()
 session.close()
+=======
+# session.commit()
+# session.close()
+
+# session.add(Richard_phone )
+# session.add(Jared_phone )
+# session.add(Dinesh_phone )
+# session.add(Gilfoyel_phone )
+>>>>>>> c67c0590985b7b6ba27c3c10d39e8ea2a65634e0
 
 session.add(Richard)
 session.add(Jared)

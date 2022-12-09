@@ -1,0 +1,182 @@
+2022-12-09 01:04:49,771 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2022-12-09 01:04:49,772 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2022-12-09 01:05:43,870 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2022-12-09 01:05:43,871 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2022-12-09 13:10:37,462 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2022-12-09 13:10:37,463 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2022-12-09 13:10:46,498 INFO werkzeug Thread-1 (process_request_thread) : 127.0.0.1 - - [09/Dec/2022 13:10:46] "GET /api/v1/num_visits HTTP/1.1" 200 -
+2022-12-09 13:10:49,315 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [09/Dec/2022 13:10:49] "GET /api/v1/num_visits HTTP/1.1" 200 -
+2022-12-09 13:10:50,567 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [09/Dec/2022 13:10:50] "GET /api/v1/num_visits HTTP/1.1" 200 -
+2022-12-09 13:20:56,420 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2022-12-09 13:20:56,421 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2022-12-09 13:21:31,484 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2022-12-09 13:21:31,484 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2022-12-09 13:24:06,519 INFO app Thread-1 (process_request_thread) : All users were selected from database
+2022-12-09 13:24:06,521 INFO werkzeug Thread-1 (process_request_thread) : 127.0.0.1 - - [09/Dec/2022 13:24:06] "GET /api/v1/get_all_people_data HTTP/1.1" 200 -
+2022-12-09 13:24:06,550 INFO app Thread-2 (process_request_thread) : All users were selected from database
+2022-12-09 13:24:06,550 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [09/Dec/2022 13:24:06] "GET /api/v1/get_all_people_data HTTP/1.1" 200 -
+2022-12-09 13:24:59,387 INFO app Thread-3 (process_request_thread) : Number of visitors of portal at 2022-12-09 is 4
+2022-12-09 13:24:59,387 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [09/Dec/2022 13:24:59] "GET /api/v1/num_visits HTTP/1.1" 200 -
+2022-12-09 13:24:59,396 INFO app Thread-4 (process_request_thread) : Number of visitors of portal at 2022-12-09 is 5
+2022-12-09 13:24:59,397 INFO werkzeug Thread-4 (process_request_thread) : 127.0.0.1 - - [09/Dec/2022 13:24:59] "GET /api/v1/num_visits HTTP/1.1" 200 -
+2022-12-09 13:25:10,896 INFO app Thread-5 (process_request_thread) : Number of visitors of portal at 2022-12-09 is 6
+2022-12-09 13:25:10,896 INFO werkzeug Thread-5 (process_request_thread) : 127.0.0.1 - - [09/Dec/2022 13:25:10] "GET /api/v1/num_visits HTTP/1.1" 200 -
+2022-12-09 13:25:10,904 INFO app Thread-6 (process_request_thread) : Number of visitors of portal at 2022-12-09 is 7
+2022-12-09 13:25:10,905 INFO werkzeug Thread-6 (process_request_thread) : 127.0.0.1 - - [09/Dec/2022 13:25:10] "GET /api/v1/num_visits HTTP/1.1" 200 -
+2022-12-09 13:25:44,391 INFO app Thread-7 (process_request_thread) : Number of visitors of portal at 2022-12-09 is 8
+2022-12-09 13:25:44,391 INFO werkzeug Thread-7 (process_request_thread) : 127.0.0.1 - - [09/Dec/2022 13:25:44] "GET /api/v1/num_visits HTTP/1.1" 200 -
+2022-12-09 13:27:40,386 INFO app Thread-8 (process_request_thread) : Number of visitors of portal at 2022-12-09 is 9
+2022-12-09 13:27:40,386 INFO werkzeug Thread-8 (process_request_thread) : 127.0.0.1 - - [09/Dec/2022 13:27:40] "GET /api/v1/num_visits HTTP/1.1" 200 -
+2022-12-09 13:27:42,285 INFO app Thread-9 (process_request_thread) : Number of visitors of portal at 2022-12-09 is 10
+2022-12-09 13:27:42,286 INFO werkzeug Thread-9 (process_request_thread) : 127.0.0.1 - - [09/Dec/2022 13:27:42] "GET /api/v1/num_visits HTTP/1.1" 200 -
+2022-12-09 13:27:56,394 INFO app Thread-10 (process_request_thread) : Number of visitors of portal at 2022-12-09 is 11
+2022-12-09 13:27:56,398 INFO werkzeug Thread-10 (process_request_thread) : 127.0.0.1 - - [09/Dec/2022 13:27:56] "GET /api/v1/num_visits HTTP/1.1" 200 -
+2022-12-09 13:27:59,394 INFO app Thread-11 (process_request_thread) : Number of visitors of portal at 2022-12-09 is 12
+2022-12-09 13:27:59,394 INFO werkzeug Thread-11 (process_request_thread) : 127.0.0.1 - - [09/Dec/2022 13:27:59] "GET /api/v1/num_visits HTTP/1.1" 200 -
+2022-12-09 13:28:10,391 INFO app Thread-12 (process_request_thread) : Number of visitors of portal at 2022-12-09 is 13
+2022-12-09 13:28:10,391 INFO werkzeug Thread-12 (process_request_thread) : 127.0.0.1 - - [09/Dec/2022 13:28:10] "GET /api/v1/num_visits HTTP/1.1" 200 -
+2022-12-09 13:28:16,145 INFO app Thread-13 (process_request_thread) : Number of visitors of portal at 2022-12-09 is 14
+2022-12-09 13:28:16,145 INFO werkzeug Thread-13 (process_request_thread) : 127.0.0.1 - - [09/Dec/2022 13:28:16] "GET /api/v1/num_visits HTTP/1.1" 200 -
+2022-12-09 13:28:25,390 INFO app Thread-14 (process_request_thread) : Number of visitors of portal at 2022-12-09 is 15
+2022-12-09 13:28:25,392 INFO werkzeug Thread-14 (process_request_thread) : 127.0.0.1 - - [09/Dec/2022 13:28:25] "GET /api/v1/num_visits HTTP/1.1" 200 -
+2022-12-09 13:28:38,387 INFO app Thread-15 (process_request_thread) : Number of visitors of portal at 2022-12-09 is 16
+2022-12-09 13:28:38,388 INFO werkzeug Thread-15 (process_request_thread) : 127.0.0.1 - - [09/Dec/2022 13:28:38] "GET /api/v1/num_visits HTTP/1.1" 200 -
+2022-12-09 13:28:39,400 INFO app Thread-16 (process_request_thread) : Number of visitors of portal at 2022-12-09 is 17
+2022-12-09 13:28:39,400 INFO werkzeug Thread-16 (process_request_thread) : 127.0.0.1 - - [09/Dec/2022 13:28:39] "GET /api/v1/num_visits HTTP/1.1" 200 -
+2022-12-09 13:28:43,387 INFO app Thread-17 (process_request_thread) : Number of visitors of portal at 2022-12-09 is 18
+2022-12-09 13:28:43,387 INFO werkzeug Thread-17 (process_request_thread) : 127.0.0.1 - - [09/Dec/2022 13:28:43] "GET /api/v1/num_visits HTTP/1.1" 200 -
+2022-12-09 13:28:52,443 INFO app Thread-18 (process_request_thread) : Number of visitors of portal at 2022-12-09 is 19
+2022-12-09 13:28:52,445 INFO werkzeug Thread-18 (process_request_thread) : 127.0.0.1 - - [09/Dec/2022 13:28:52] "GET /api/v1/num_visits HTTP/1.1" 200 -
+2022-12-09 13:28:52,455 INFO app Thread-19 (process_request_thread) : Number of visitors of portal at 2022-12-09 is 20
+2022-12-09 13:28:52,458 INFO werkzeug Thread-19 (process_request_thread) : 127.0.0.1 - - [09/Dec/2022 13:28:52] "GET /api/v1/num_visits HTTP/1.1" 200 -
+2022-12-09 13:28:58,071 INFO app Thread-20 (process_request_thread) : Number of visitors of portal at 2022-12-09 is 21
+2022-12-09 13:28:58,072 INFO werkzeug Thread-20 (process_request_thread) : 127.0.0.1 - - [09/Dec/2022 13:28:58] "GET /api/v1/num_visits HTTP/1.1" 200 -
+2022-12-09 13:28:58,078 INFO app Thread-21 (process_request_thread) : Number of visitors of portal at 2022-12-09 is 22
+2022-12-09 13:28:58,079 INFO werkzeug Thread-21 (process_request_thread) : 127.0.0.1 - - [09/Dec/2022 13:28:58] "GET /api/v1/num_visits HTTP/1.1" 200 -
+2022-12-09 13:29:01,602 INFO app Thread-22 (process_request_thread) : Number of visitors of portal at 2022-12-09 is 23
+2022-12-09 13:29:01,602 INFO werkzeug Thread-22 (process_request_thread) : 127.0.0.1 - - [09/Dec/2022 13:29:01] "GET /api/v1/num_visits HTTP/1.1" 200 -
+2022-12-09 13:29:01,616 INFO app Thread-23 (process_request_thread) : Number of visitors of portal at 2022-12-09 is 24
+2022-12-09 13:29:01,617 INFO werkzeug Thread-23 (process_request_thread) : 127.0.0.1 - - [09/Dec/2022 13:29:01] "GET /api/v1/num_visits HTTP/1.1" 200 -
+2022-12-09 13:29:11,222 INFO app Thread-24 (process_request_thread) : Number of visitors of portal at 2022-12-09 is 25
+2022-12-09 13:29:11,222 INFO werkzeug Thread-24 (process_request_thread) : 127.0.0.1 - - [09/Dec/2022 13:29:11] "GET /api/v1/num_visits HTTP/1.1" 200 -
+2022-12-09 13:29:14,125 INFO app Thread-25 (process_request_thread) : Number of visitors of portal at 2022-12-09 is 26
+2022-12-09 13:29:14,126 INFO werkzeug Thread-25 (process_request_thread) : 127.0.0.1 - - [09/Dec/2022 13:29:14] "GET /api/v1/num_visits HTTP/1.1" 200 -
+2022-12-09 13:29:14,129 INFO app Thread-26 (process_request_thread) : Number of visitors of portal at 2022-12-09 is 27
+2022-12-09 13:29:14,130 INFO werkzeug Thread-26 (process_request_thread) : 127.0.0.1 - - [09/Dec/2022 13:29:14] "GET /api/v1/num_visits HTTP/1.1" 200 -
+2022-12-09 13:29:15,474 INFO app Thread-27 (process_request_thread) : Number of visitors of portal at 2022-12-09 is 28
+2022-12-09 13:29:15,475 INFO werkzeug Thread-27 (process_request_thread) : 127.0.0.1 - - [09/Dec/2022 13:29:15] "GET /api/v1/num_visits HTTP/1.1" 200 -
+2022-12-09 13:29:15,481 INFO app Thread-28 (process_request_thread) : Number of visitors of portal at 2022-12-09 is 29
+2022-12-09 13:29:15,482 INFO werkzeug Thread-28 (process_request_thread) : 127.0.0.1 - - [09/Dec/2022 13:29:15] "GET /api/v1/num_visits HTTP/1.1" 200 -
+2022-12-09 13:29:29,401 INFO app Thread-29 (process_request_thread) : Number of visitors of portal at 2022-12-09 is 30
+2022-12-09 13:29:29,402 INFO werkzeug Thread-29 (process_request_thread) : 127.0.0.1 - - [09/Dec/2022 13:29:29] "GET /api/v1/num_visits HTTP/1.1" 200 -
+2022-12-09 13:29:32,391 INFO app Thread-30 (process_request_thread) : Number of visitors of portal at 2022-12-09 is 31
+2022-12-09 13:29:32,393 INFO werkzeug Thread-30 (process_request_thread) : 127.0.0.1 - - [09/Dec/2022 13:29:32] "GET /api/v1/num_visits HTTP/1.1" 200 -
+2022-12-09 13:29:35,398 INFO app Thread-31 (process_request_thread) : Number of visitors of portal at 2022-12-09 is 32
+2022-12-09 13:29:35,400 INFO werkzeug Thread-31 (process_request_thread) : 127.0.0.1 - - [09/Dec/2022 13:29:35] "GET /api/v1/num_visits HTTP/1.1" 200 -
+2022-12-09 13:29:37,953 INFO app Thread-32 (process_request_thread) : Number of visitors of portal at 2022-12-09 is 33
+2022-12-09 13:29:37,954 INFO werkzeug Thread-32 (process_request_thread) : 127.0.0.1 - - [09/Dec/2022 13:29:37] "GET /api/v1/num_visits HTTP/1.1" 200 -
+2022-12-09 13:29:37,957 INFO app Thread-33 (process_request_thread) : Number of visitors of portal at 2022-12-09 is 34
+2022-12-09 13:29:37,958 INFO werkzeug Thread-33 (process_request_thread) : 127.0.0.1 - - [09/Dec/2022 13:29:37] "GET /api/v1/num_visits HTTP/1.1" 200 -
+2022-12-09 13:29:40,924 INFO app Thread-34 (process_request_thread) : Number of visitors of portal at 2022-12-09 is 35
+2022-12-09 13:29:40,925 INFO werkzeug Thread-34 (process_request_thread) : 127.0.0.1 - - [09/Dec/2022 13:29:40] "GET /api/v1/num_visits HTTP/1.1" 200 -
+2022-12-09 13:29:40,933 INFO app Thread-35 (process_request_thread) : Number of visitors of portal at 2022-12-09 is 36
+2022-12-09 13:29:40,934 INFO werkzeug Thread-35 (process_request_thread) : 127.0.0.1 - - [09/Dec/2022 13:29:40] "GET /api/v1/num_visits HTTP/1.1" 200 -
+2022-12-09 13:29:48,407 INFO app Thread-36 (process_request_thread) : Number of visitors of portal at 2022-12-09 is 37
+2022-12-09 13:29:48,408 INFO werkzeug Thread-36 (process_request_thread) : 127.0.0.1 - - [09/Dec/2022 13:29:48] "GET /api/v1/num_visits HTTP/1.1" 200 -
+2022-12-09 13:29:52,160 INFO app Thread-37 (process_request_thread) : Number of visitors of portal at 2022-12-09 is 38
+2022-12-09 13:29:52,162 INFO werkzeug Thread-37 (process_request_thread) : 127.0.0.1 - - [09/Dec/2022 13:29:52] "GET /api/v1/num_visits HTTP/1.1" 200 -
+2022-12-09 13:29:52,165 INFO app Thread-38 (process_request_thread) : Number of visitors of portal at 2022-12-09 is 39
+2022-12-09 13:29:52,165 INFO werkzeug Thread-38 (process_request_thread) : 127.0.0.1 - - [09/Dec/2022 13:29:52] "GET /api/v1/num_visits HTTP/1.1" 200 -
+2022-12-09 13:30:09,390 INFO app Thread-39 (process_request_thread) : Number of visitors of portal at 2022-12-09 is 40
+2022-12-09 13:30:09,391 INFO werkzeug Thread-39 (process_request_thread) : 127.0.0.1 - - [09/Dec/2022 13:30:09] "GET /api/v1/num_visits HTTP/1.1" 200 -
+2022-12-09 13:30:16,968 INFO app Thread-40 (process_request_thread) : Number of visitors of portal at 2022-12-09 is 41
+2022-12-09 13:30:16,968 INFO werkzeug Thread-40 (process_request_thread) : 127.0.0.1 - - [09/Dec/2022 13:30:16] "GET /api/v1/num_visits HTTP/1.1" 200 -
+2022-12-09 13:30:16,972 INFO app Thread-41 (process_request_thread) : Number of visitors of portal at 2022-12-09 is 42
+2022-12-09 13:30:16,973 INFO werkzeug Thread-41 (process_request_thread) : 127.0.0.1 - - [09/Dec/2022 13:30:16] "GET /api/v1/num_visits HTTP/1.1" 200 -
+2022-12-09 13:30:23,998 INFO app Thread-42 (process_request_thread) : All users were selected from database
+2022-12-09 13:30:23,998 INFO werkzeug Thread-42 (process_request_thread) : 127.0.0.1 - - [09/Dec/2022 13:30:23] "GET /api/v1/get_all_people_data HTTP/1.1" 200 -
+2022-12-09 13:30:24,017 INFO app Thread-43 (process_request_thread) : All users were selected from database
+2022-12-09 13:30:24,017 INFO werkzeug Thread-43 (process_request_thread) : 127.0.0.1 - - [09/Dec/2022 13:30:24] "GET /api/v1/get_all_people_data HTTP/1.1" 200 -
+2022-12-09 13:30:26,115 INFO app Thread-44 (process_request_thread) : Number of visitors of portal at 2022-12-09 is 43
+2022-12-09 13:30:26,116 INFO werkzeug Thread-44 (process_request_thread) : 127.0.0.1 - - [09/Dec/2022 13:30:26] "GET /api/v1/num_visits HTTP/1.1" 200 -
+2022-12-09 13:30:26,144 INFO app Thread-45 (process_request_thread) : Number of visitors of portal at 2022-12-09 is 44
+2022-12-09 13:30:26,145 INFO werkzeug Thread-45 (process_request_thread) : 127.0.0.1 - - [09/Dec/2022 13:30:26] "GET /api/v1/num_visits HTTP/1.1" 200 -
+2022-12-09 13:30:46,397 INFO app Thread-46 (process_request_thread) : Number of visitors of portal at 2022-12-09 is 45
+2022-12-09 13:30:46,400 INFO werkzeug Thread-46 (process_request_thread) : 127.0.0.1 - - [09/Dec/2022 13:30:46] "GET /api/v1/num_visits HTTP/1.1" 200 -
+2022-12-09 13:38:08,395 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2022-12-09 13:38:08,395 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2022-12-09 13:38:20,469 INFO app Thread-1 (process_request_thread) : Number of visitors of portal at 2022-12-09 is 46
+2022-12-09 13:38:20,469 INFO werkzeug Thread-1 (process_request_thread) : 127.0.0.1 - - [09/Dec/2022 13:38:20] "GET /api/v1/num_visits HTTP/1.1" 200 -
+2022-12-09 13:38:20,469 INFO app Thread-2 (process_request_thread) : Number of visitors of portal at 2022-12-09 is 47
+2022-12-09 13:38:20,477 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [09/Dec/2022 13:38:20] "GET /api/v1/num_visits HTTP/1.1" 200 -
+2022-12-09 13:38:44,461 INFO app Thread-3 (process_request_thread) : All users were selected from database
+2022-12-09 13:38:44,461 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [09/Dec/2022 13:38:44] "GET /api/v1/get_all_people_data HTTP/1.1" 200 -
+2022-12-09 13:38:44,469 INFO app Thread-4 (process_request_thread) : All users were selected from database
+2022-12-09 13:38:44,469 INFO werkzeug Thread-4 (process_request_thread) : 127.0.0.1 - - [09/Dec/2022 13:38:44] "GET /api/v1/get_all_people_data HTTP/1.1" 200 -
+2022-12-09 13:38:49,187 INFO app Thread-5 (process_request_thread) : Number of visitors of portal at 2022-12-09 is 48
+2022-12-09 13:38:49,187 INFO werkzeug Thread-5 (process_request_thread) : 127.0.0.1 - - [09/Dec/2022 13:38:49] "GET /api/v1/num_visits HTTP/1.1" 200 -
+2022-12-09 13:38:49,187 INFO app Thread-6 (process_request_thread) : Number of visitors of portal at 2022-12-09 is 49
+2022-12-09 13:38:49,195 INFO werkzeug Thread-6 (process_request_thread) : 127.0.0.1 - - [09/Dec/2022 13:38:49] "GET /api/v1/num_visits HTTP/1.1" 200 -
+2022-12-09 13:38:58,347 INFO app Thread-7 (process_request_thread) : Number of visitors of portal at 2022-12-09 is 50
+2022-12-09 13:38:58,347 INFO werkzeug Thread-7 (process_request_thread) : 127.0.0.1 - - [09/Dec/2022 13:38:58] "GET /api/v1/num_visits HTTP/1.1" 200 -
+2022-12-09 13:38:59,344 INFO app Thread-8 (process_request_thread) : Number of visitors of portal at 2022-12-09 is 51
+2022-12-09 13:38:59,344 INFO werkzeug Thread-8 (process_request_thread) : 127.0.0.1 - - [09/Dec/2022 13:38:59] "GET /api/v1/num_visits HTTP/1.1" 200 -
+2022-12-09 13:39:08,789 INFO app Thread-9 (process_request_thread) : All users were selected from database
+2022-12-09 13:39:08,789 INFO werkzeug Thread-9 (process_request_thread) : 127.0.0.1 - - [09/Dec/2022 13:39:08] "GET /api/v1/get_all_people_data HTTP/1.1" 200 -
+2022-12-09 13:39:08,805 INFO app Thread-10 (process_request_thread) : All users were selected from database
+2022-12-09 13:39:08,805 INFO werkzeug Thread-10 (process_request_thread) : 127.0.0.1 - - [09/Dec/2022 13:39:08] "GET /api/v1/get_all_people_data HTTP/1.1" 200 -
+2022-12-09 13:39:50,325 INFO app Thread-11 (process_request_thread) : All users were selected from database
+2022-12-09 13:39:50,327 INFO werkzeug Thread-11 (process_request_thread) : 127.0.0.1 - - [09/Dec/2022 13:39:50] "GET /api/v1/get_all_people_data HTTP/1.1" 200 -
+2022-12-09 13:39:50,353 INFO app Thread-12 (process_request_thread) : All users were selected from database
+2022-12-09 13:39:50,354 INFO werkzeug Thread-12 (process_request_thread) : 127.0.0.1 - - [09/Dec/2022 13:39:50] "GET /api/v1/get_all_people_data HTTP/1.1" 200 -
+2022-12-09 13:48:38,824 INFO app Thread-13 (process_request_thread) : All users were selected from database
+2022-12-09 13:48:38,825 INFO werkzeug Thread-13 (process_request_thread) : 127.0.0.1 - - [09/Dec/2022 13:48:38] "GET /api/v1/get_all_people_data HTTP/1.1" 200 -
+2022-12-09 13:48:38,848 INFO app Thread-14 (process_request_thread) : All users were selected from database
+2022-12-09 13:48:38,849 INFO werkzeug Thread-14 (process_request_thread) : 127.0.0.1 - - [09/Dec/2022 13:48:38] "GET /api/v1/get_all_people_data HTTP/1.1" 200 -
+2022-12-09 13:55:22,620 INFO app Thread-15 (process_request_thread) : Number of visitors of portal at 2022-12-09 is 52
+2022-12-09 13:55:22,620 INFO werkzeug Thread-15 (process_request_thread) : 127.0.0.1 - - [09/Dec/2022 13:55:22] "GET /api/v1/num_visits HTTP/1.1" 200 -
+2022-12-09 13:55:22,624 INFO app Thread-16 (process_request_thread) : Number of visitors of portal at 2022-12-09 is 53
+2022-12-09 13:55:22,624 INFO werkzeug Thread-16 (process_request_thread) : 127.0.0.1 - - [09/Dec/2022 13:55:22] "GET /api/v1/num_visits HTTP/1.1" 200 -
+2022-12-09 14:12:42,374 INFO app Thread-17 (process_request_thread) : Number of visitors of portal at 2022-12-09 is 54
+2022-12-09 14:12:42,375 INFO werkzeug Thread-17 (process_request_thread) : 127.0.0.1 - - [09/Dec/2022 14:12:42] "GET /api/v1/num_visits HTTP/1.1" 200 -
+2022-12-09 14:12:42,382 INFO app Thread-18 (process_request_thread) : Number of visitors of portal at 2022-12-09 is 55
+2022-12-09 14:12:42,384 INFO werkzeug Thread-18 (process_request_thread) : 127.0.0.1 - - [09/Dec/2022 14:12:42] "GET /api/v1/num_visits HTTP/1.1" 200 -
+2022-12-09 14:13:35,356 INFO app Thread-19 (process_request_thread) : Number of visitors of portal at 2022-12-09 is 56
+2022-12-09 14:13:35,357 INFO werkzeug Thread-19 (process_request_thread) : 127.0.0.1 - - [09/Dec/2022 14:13:35] "GET /api/v1/num_visits HTTP/1.1" 200 -
+2022-12-09 14:18:41,362 INFO app Thread-20 (process_request_thread) : Number of visitors of portal at 2022-12-09 is 57
+2022-12-09 14:18:41,362 INFO werkzeug Thread-20 (process_request_thread) : 127.0.0.1 - - [09/Dec/2022 14:18:41] "GET /api/v1/num_visits HTTP/1.1" 200 -
+2022-12-09 14:18:48,402 INFO app Thread-21 (process_request_thread) : Number of visitors of portal at 2022-12-09 is 58
+2022-12-09 14:18:48,404 INFO werkzeug Thread-21 (process_request_thread) : 127.0.0.1 - - [09/Dec/2022 14:18:48] "GET /api/v1/num_visits HTTP/1.1" 200 -
+2022-12-09 14:18:48,413 INFO app Thread-22 (process_request_thread) : Number of visitors of portal at 2022-12-09 is 59
+2022-12-09 14:18:48,413 INFO werkzeug Thread-22 (process_request_thread) : 127.0.0.1 - - [09/Dec/2022 14:18:48] "GET /api/v1/num_visits HTTP/1.1" 200 -
+2022-12-09 14:20:30,832 INFO app Thread-23 (process_request_thread) : Number of visitors of portal at 2022-12-09 is 60
+2022-12-09 14:20:30,833 INFO werkzeug Thread-23 (process_request_thread) : 127.0.0.1 - - [09/Dec/2022 14:20:30] "GET /api/v1/num_visits HTTP/1.1" 200 -
+2022-12-09 14:20:30,836 INFO app Thread-24 (process_request_thread) : Number of visitors of portal at 2022-12-09 is 61
+2022-12-09 14:20:30,837 INFO werkzeug Thread-24 (process_request_thread) : 127.0.0.1 - - [09/Dec/2022 14:20:30] "GET /api/v1/num_visits HTTP/1.1" 200 -
+2022-12-09 14:20:39,370 INFO app Thread-25 (process_request_thread) : Number of visitors of portal at 2022-12-09 is 62
+2022-12-09 14:20:39,372 INFO werkzeug Thread-25 (process_request_thread) : 127.0.0.1 - - [09/Dec/2022 14:20:39] "GET /api/v1/num_visits HTTP/1.1" 200 -
+2022-12-09 15:03:17,408 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2022-12-09 15:03:17,408 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2022-12-09 15:03:53,149 INFO app Thread-1 (process_request_thread) : Number of visitors of portal at 2022-12-09 is 54
+2022-12-09 15:03:53,150 INFO werkzeug Thread-1 (process_request_thread) : 127.0.0.1 - - [09/Dec/2022 15:03:53] "GET /api/v1/num_visits HTTP/1.1" 200 -
+2022-12-09 15:03:53,154 INFO app Thread-2 (process_request_thread) : Number of visitors of portal at 2022-12-09 is 55
+2022-12-09 15:03:53,154 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [09/Dec/2022 15:03:53] "GET /api/v1/num_visits HTTP/1.1" 200 -
+2022-12-09 15:04:11,457 INFO app Thread-3 (process_request_thread) : All users were selected from database
+2022-12-09 15:04:11,457 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [09/Dec/2022 15:04:11] "GET /api/v1/get_all_people_data HTTP/1.1" 200 -
+2022-12-09 15:04:11,463 INFO app Thread-4 (process_request_thread) : All users were selected from database
+2022-12-09 15:04:11,465 INFO werkzeug Thread-4 (process_request_thread) : 127.0.0.1 - - [09/Dec/2022 15:04:11] "GET /api/v1/get_all_people_data HTTP/1.1" 200 -
+2022-12-09 15:04:57,180 INFO app Thread-5 (process_request_thread) : Number of visitors of portal at 2022-12-09 is 56
+2022-12-09 15:04:57,181 INFO werkzeug Thread-5 (process_request_thread) : 127.0.0.1 - - [09/Dec/2022 15:04:57] "GET /api/v1/num_visits HTTP/1.1" 200 -
+2022-12-09 15:04:57,183 INFO app Thread-6 (process_request_thread) : Number of visitors of portal at 2022-12-09 is 57
+2022-12-09 15:04:57,184 INFO werkzeug Thread-6 (process_request_thread) : 127.0.0.1 - - [09/Dec/2022 15:04:57] "GET /api/v1/num_visits HTTP/1.1" 200 -
+2022-12-09 15:05:42,976 INFO app Thread-7 (process_request_thread) : All users were selected from database
+2022-12-09 15:05:42,976 INFO werkzeug Thread-7 (process_request_thread) : 127.0.0.1 - - [09/Dec/2022 15:05:42] "GET /api/v1/get_all_people_data HTTP/1.1" 200 -
+2022-12-09 15:05:42,983 INFO app Thread-8 (process_request_thread) : All users were selected from database
+2022-12-09 15:05:42,983 INFO werkzeug Thread-8 (process_request_thread) : 127.0.0.1 - - [09/Dec/2022 15:05:42] "GET /api/v1/get_all_people_data HTTP/1.1" 200 -
