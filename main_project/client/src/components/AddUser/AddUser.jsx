@@ -5,9 +5,7 @@ const AddUser = () => {
   const [firstname, setName] = useState("");
   const [lastname, setLastname] = useState("");
   const [position, setPosition] = useState("");
-  const [departament, setDepartment] = useState("");
-  const [salary, setSalary] = useState("");
-  const [phonenumber, setPhonenumber] = useState("");
+   const [phonenumber, setPhonenumber] = useState("");
   const [message, setMessage] = useState("");
 
   let handleSubmit = async (e) => {
@@ -17,8 +15,6 @@ const AddUser = () => {
       firstname: firstname,
       lastname: lastname,
       position: position,
-      departament: departament,
-      salary: salary,
       phonenumber: phonenumber
     })
 
@@ -30,8 +26,6 @@ const AddUser = () => {
       firstname: firstname,
       lastname: lastname,
       position: position,
-      departament: departament,
-      salary: salary,
       phonenumber: phonenumber
       }))
       let res = await fetch("http://localhost:5000/api/v1/add_person", {
@@ -46,8 +40,6 @@ const AddUser = () => {
         setLastname("");
         setPhonenumber("");
         setPosition("");
-        setDepartment("");
-        setSalary("");
         setMessage("User added to database successfully");
         // navigate("/home");
       } 
@@ -78,20 +70,13 @@ const AddUser = () => {
           type="text"
           value={position}
           placeholder="должность"
+          list="positions"
           onChange={(e) => setPosition(e.target.value)}
         />
-        <input
-          type="text"
-          value={departament}
-          placeholder="отдел"
-          onChange={(e) => setDepartment(e.target.value)}
-        />
-        <input
-          type="text"
-          value={salary}
-          placeholder="зарплата"
-          onChange={(e) => setSalary(e.target.value)}
-        />
+          {/* <datalist id="positions">
+            <option value="Boston">
+            <option value="Cambridge">
+          </datalist> */}
         <input
           type="text"
           value={phonenumber}

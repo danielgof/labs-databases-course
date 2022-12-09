@@ -34,10 +34,12 @@ class Phone(Base):
         self.phone = phone
 
 
-people_actors_association = Table(
-    'movies_actors', Base.metadata,
-    Column('people_id', Integer, ForeignKey('people.id')),
-    Column('phone_id', Integer, ForeignKey('phone.id'))
+people_phones_association = Table(
+    'people_phones', Base.metadata,
+    Column('people_id', Integer, ForeignKey('people.id', ondelete='CASCADE',
+     onupdate='CASCADE')),
+    Column('phone_id', Integer, ForeignKey('phone.id', ondelete='CASCADE',
+     onupdate='CASCADE'))
 )
 
 """People"""
@@ -47,7 +49,7 @@ class Person(Base):
     last_name = Column(String, nullable=False)
     first_name = Column(String, nullable=False)
     position_id = Column(Integer, ForeignKey("position.id"))
-    phones = relationship("Phone", secondary=people_actors_association)
+    phones = relationship("Phone", secondary=people_phones_association)
 
     def __init__(self, last_name, first_name, position_id):
         self.last_name = last_name

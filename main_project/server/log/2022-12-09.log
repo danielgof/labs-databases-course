@@ -843,3 +843,155 @@ DETAIL:  На ключ (id)=(15) всё ещё есть ссылки в таблице "movies_actors".
 [parameters: {'id_1': 15}]
 (Background on this error at: https://sqlalche.me/e/14/gkpj)
 2022-12-09 23:23:05,779 INFO werkzeug Thread-1 (process_request_thread) : 127.0.0.1 - - [09/Dec/2022 23:23:05] "[35m[1mDELETE /api/v1/delete_person HTTP/1.1[0m" 500 -
+2022-12-09 23:50:02,617 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2022-12-09 23:50:02,617 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2022-12-09 23:50:07,518 INFO werkzeug Thread-1 (process_request_thread) : 127.0.0.1 - - [09/Dec/2022 23:50:07] "PUT /api/v1/upd_position HTTP/1.1" 200 -
+2022-12-09 23:52:45,462 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2022-12-09 23:52:45,462 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2022-12-09 23:52:48,522 ERROR app Thread-1 (process_request_thread) : Exception on /api/v1/upd_lastname [PUT]
+Traceback (most recent call last):
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\flask\app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\flask\app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\flask\app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\flask\app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\app.py", line 128, in upd_lastname
+    .update({Person.position_id: data["firstname_new"]}, synchronize_session = False)
+KeyError: 'firstname_new'
+2022-12-09 23:52:48,524 INFO werkzeug Thread-1 (process_request_thread) : 127.0.0.1 - - [09/Dec/2022 23:52:48] "[35m[1mPUT /api/v1/upd_lastname HTTP/1.1[0m" 500 -
+2022-12-09 23:53:00,786 ERROR app Thread-2 (process_request_thread) : Exception on /api/v1/upd_lastname [PUT]
+Traceback (most recent call last):
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\flask\app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\flask\app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\flask\app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\flask\app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\app.py", line 128, in upd_lastname
+    .update({Person.position_id: data["lastname_new"]}, synchronize_session = False)
+KeyError: 'firstname_new'
+2022-12-09 23:53:00,787 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [09/Dec/2022 23:53:00] "[35m[1mPUT /api/v1/upd_lastname HTTP/1.1[0m" 500 -
+2022-12-09 23:53:03,762 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2022-12-09 23:53:03,762 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2022-12-09 23:53:05,410 ERROR app Thread-1 (process_request_thread) : Exception on /api/v1/upd_lastname [PUT]
+Traceback (most recent call last):
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1900, in _execute_context
+    self.dialect.do_execute(
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\sqlalchemy\engine\default.py", line 736, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.InvalidTextRepresentation: ОШИБКА:  неверный синтаксис для типа integer: "new_lastname"
+LINE 1: UPDATE people SET position_id='new_lastname' WHERE people.id...
+                                      ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\flask\app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\flask\app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\flask\app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\flask\app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\app.py", line 126, in upd_lastname
+    session.query(Person)\
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\sqlalchemy\orm\query.py", line 3305, in update
+    result = self.session.execute(
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\sqlalchemy\orm\session.py", line 1714, in execute
+    result = conn._execute_20(statement, params or {}, execution_options)
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1705, in _execute_20
+    return meth(self, args_10style, kwargs_10style, execution_options)
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\sqlalchemy\sql\elements.py", line 334, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1572, in _execute_clauseelement
+    ret = self._execute_context(
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1943, in _execute_context
+    self._handle_dbapi_exception(
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\sqlalchemy\engine\base.py", line 2124, in _handle_dbapi_exception
+    util.raise_(
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\sqlalchemy\util\compat.py", line 210, in raise_
+    raise exception
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1900, in _execute_context
+    self.dialect.do_execute(
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\sqlalchemy\engine\default.py", line 736, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.DataError: (psycopg2.errors.InvalidTextRepresentation) ОШИБКА:  неверный синтаксис для типа integer: "new_lastname"
+LINE 1: UPDATE people SET position_id='new_lastname' WHERE people.id...
+                                      ^
+
+[SQL: UPDATE people SET position_id=%(position_id)s WHERE people.id = %(id_1)s]
+[parameters: {'position_id': 'new_lastname', 'id_1': 6}]
+(Background on this error at: https://sqlalche.me/e/14/9h9h)
+2022-12-09 23:53:05,421 INFO werkzeug Thread-1 (process_request_thread) : 127.0.0.1 - - [09/Dec/2022 23:53:05] "[35m[1mPUT /api/v1/upd_lastname HTTP/1.1[0m" 500 -
+2022-12-09 23:53:38,664 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2022-12-09 23:53:38,664 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2022-12-09 23:53:40,136 INFO werkzeug Thread-1 (process_request_thread) : 127.0.0.1 - - [09/Dec/2022 23:53:40] "PUT /api/v1/upd_lastname HTTP/1.1" 200 -
+2022-12-09 23:56:25,719 ERROR app Thread-2 (process_request_thread) : Exception on /api/v1/delete_person [DELETE]
+Traceback (most recent call last):
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1900, in _execute_context
+    self.dialect.do_execute(
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\sqlalchemy\engine\default.py", line 736, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.ForeignKeyViolation: ОШИБКА:  UPDATE или DELETE в таблице "people" нарушает ограничение внешнего ключа "movies_actors_people_id_fkey" таблицы "movies_actors"
+DETAIL:  На ключ (id)=(15) всё ещё есть ссылки в таблице "movies_actors".
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\flask\app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\flask\app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\flask\app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\flask\app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\app.py", line 81, in delete_person
+    session.query(Person).filter(Person.id == data["id"]).delete()
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\sqlalchemy\orm\query.py", line 3221, in delete
+    result = self.session.execute(
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\sqlalchemy\orm\session.py", line 1714, in execute
+    result = conn._execute_20(statement, params or {}, execution_options)
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1705, in _execute_20
+    return meth(self, args_10style, kwargs_10style, execution_options)
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\sqlalchemy\sql\elements.py", line 334, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1572, in _execute_clauseelement
+    ret = self._execute_context(
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1943, in _execute_context
+    self._handle_dbapi_exception(
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\sqlalchemy\engine\base.py", line 2124, in _handle_dbapi_exception
+    util.raise_(
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\sqlalchemy\util\compat.py", line 210, in raise_
+    raise exception
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1900, in _execute_context
+    self.dialect.do_execute(
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\sqlalchemy\engine\default.py", line 736, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.IntegrityError: (psycopg2.errors.ForeignKeyViolation) ОШИБКА:  UPDATE или DELETE в таблице "people" нарушает ограничение внешнего ключа "movies_actors_people_id_fkey" таблицы "movies_actors"
+DETAIL:  На ключ (id)=(15) всё ещё есть ссылки в таблице "movies_actors".
+
+[SQL: DELETE FROM people WHERE people.id = %(id_1)s]
+[parameters: {'id_1': 15}]
+(Background on this error at: https://sqlalche.me/e/14/gkpj)
+2022-12-09 23:56:25,726 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [09/Dec/2022 23:56:25] "[35m[1mDELETE /api/v1/delete_person HTTP/1.1[0m" 500 -

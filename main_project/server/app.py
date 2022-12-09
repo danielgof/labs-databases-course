@@ -80,22 +80,6 @@ def delete_person():
     data = request.get_json(force=True)
     session.query(Person).filter(Person.id == data["id"]).delete()
     session.commit()
-
-    # phones = session.query(Phone) \
-    # .join(Phone, Person.phones) \
-    # .filter(Person.id == 15) \
-    # .all()
-    # print(phones)
-    # for phone in phones:
-    #     session.delete(phone)
-    # session.commit()
-
-    # phone = session.query(Phone).filter(Phone.phone == data["phonenumber"]).first()
-    # person_id = phone.person_id
-    # session.query(Phone).filter(Phone.phone == data["phonenumber"]).delete()
-    # session.commit()
-    # session.query(Person).filter(Person.id == person_id).delete()
-    # session.commit()
     return jsonify({"result":"success"})
 
 
@@ -113,12 +97,19 @@ def upd_phone():
 @app.route("/api/v1/upd_firstname", methods=["PUT"])
 def upd_firstname():
     data = request.get_json(force=True)
-    phone = session.query(Phone)\
-    .filter(Phone.phone == data["phonenumber"]).first()
-    personid = phone.person_id
-    person = session.query(Person)\
-    .filter(Person.id == personid)\
+    session.query(Person)\
+    .filter(Person.id == data["id"])\
     .update({Person.first_name: data["firstname_new"]}, synchronize_session = False)
+    session.commit()
+    return jsonify({"result":"success"})
+
+
+@app.route("/api/v1/upd_lastname", methods=["PUT"])
+def upd_lastname():
+    data = request.get_json(force=True)
+    session.query(Person)\
+    .filter(Person.id == data["id"])\
+    .update({Person.last_name: data["lastname_new"]}, synchronize_session = False)
     session.commit()
     return jsonify({"result":"success"})
 
@@ -126,11 +117,8 @@ def upd_firstname():
 @app.route("/api/v1/upd_position", methods=["PUT"])
 def upd_position():
     data = request.get_json(force=True)
-    phone = session.query(Phone)\
-    .filter(Phone.phone == data["phonenumber"]).first()
-    personid = phone.person_id
-    person = session.query(Person)\
-    .filter(Person.id == personid)\
+    session.query(Person)\
+    .filter(Person.id == data["id"])\
     .update({Person.position_id: data["position_new"]}, synchronize_session = False)
     session.commit()
     return jsonify({"result":"success"})
