@@ -1,0 +1,51 @@
+.text-card {
+    text-align: left;
+    background-color: rgb(199, 218, 235);
+    /* box-shadow: 0px 0px 5px rgb(37, 108, 223);
+    border-color: rgb(37, 108, 223); */
+    color: rgb(255, 255, 255);
+    text-shadow: 5px;
+}
+
+.btn-dop-info {
+    text-align: left;
+    background-color: rgb(199, 218, 235);
+    border-radius: 8px;
+    box-shadow: 5px;
+    border-color: aliceblue;
+}
+
+.delete-person {
+    text-align: right;
+    margin-left: 95%;
+}
+
+.delete-person:hover {
+    background-color: rgb(255, 0, 0);
+}
+
+.title {
+    text-align: left;
+}
+
+.container {
+    text-align:center;
+}
+
+.person-card-img-container {
+    display: flex;
+    justify-content: center;
+}
+
+/* .person-card-maindata, .person-card-img {
+    display:inline;
+} */
+
+.person-card-maindata {
+    font-size: 30px;
+    margin-left: 15%;
+}
+
+.person-card-img img {
+    border-radius: 5px;
+}

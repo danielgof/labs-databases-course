@@ -36,13 +36,12 @@ class People(Base):
         self.first_name = first_name
         self.position_id = position_id
 
-
 """3.Phones"""
 class Phone(Base):
     __tablename__ = "phone"
     id = Column(Integer, primary_key=True)
     person_id = Column(Integer, ForeignKey("people.id"))
-    phone = Column(String, nullable=False)
+    phone = Column(String, nullable=False, index=True, unique=True)
 
     def __init__(self, person_id, phone):
         self.person_id = person_id
@@ -59,20 +58,26 @@ Base.metadata.create_all(engine)
 # Dinesh = People("Chuktai", "Dinesh", 3)
 # Gilfoyel = People("Burtram", "Gilfoyel", 3)
 
-# Richard_phone = Phone(13, "+1**********")
-# Jared_phone = Phone(14, "+1**********")
-# Dinesh_phone = Phone(15, "+1**********")
-# Gilfoyel_phone = Phone(16, "+1**********")
+# Richard_phone = Phone(1, "+154********")
+# Jared_phone = Phone(2, "+167********")
+# Dinesh_phone = Phone(3, "+1393*******")
+# Gilfoyel_phone = Phone(4, "+1*234*******")
 
 # session = Session()
-# # session.add(CEO)
-# # session.add(CTO)
-# # session.add(SE)
+# session.add(CEO)
+# session.add(CTO)
+# session.add(SE)
+
+# session.commit()
+# session.close()
 
 # session.add(Richard)
 # session.add(Jared)
 # session.add(Dinesh)
 # session.add(Gilfoyel)
+
+# session.commit()
+# session.close()
 
 # session.add(Richard_phone )
 # session.add(Jared_phone )

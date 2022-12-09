@@ -1,18 +1,13 @@
-import React from 'react'
-import GetUsersData from '../components/getUsersData'
+import React from 'react';
+import UsersPage from '../components/UsersPage/UsersPage';
 
 const Users = () => {
   return (
-    <div>
-      <p>Данные о сотрудниках</p>
-      <GetUsersData />
-      <a href="/" >
-        <button className="Btn">
-        Вернуться домой
-        </button>
-      </a>
-    </div>
+    <>
+      <UsersPage itemsPerPage={2}/>
+    </>
   )
 }
 
-export default Users
+export default Users;
+  
