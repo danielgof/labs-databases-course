@@ -38,7 +38,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv"
+VIRTUAL_ENV="C:\Users\Анна\Desktop\проект\labs-databases-course\main_project\server\venv"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"
