@@ -28,16 +28,20 @@ def num_visits():
 @app.route("/api/v1/get_all_people_data", methods=["GET"])
 def get_all_data():    
     try:
-        data = session.query(People).all()
+        data = session.query(Person).all()
         res = list()
         for person in data:
-            phone_num = session.query(Phone).filter(Phone.person_id == person.id).first()
+            phone_num = session.query(Phone) \
+            .join(Phone, Person.phones) \
+            .filter(Person.id == 1) \
+            .first()
             position = session.query(Positon).filter(Positon.id == person.position_id).first()
             if position == None:
                 continue
             if phone_num == None:
                 continue
             res.append({
+            "id": person.id,
             "position": position.position,
             "last_name": person.last_name,
             "first_name": person.first_name,
@@ -49,49 +53,49 @@ def get_all_data():
         return res 
     except Exception as e:
         app.logger.warning(f"Exeption {e} ocured")
-        abort(Response(e, 401))
+        abort(Response(e, 500))
 
 
 @app.route("/api/v1/add_person", methods=["POST"])
 def add_person():
     data = request.get_json(force=True)
-    print(data)
-    position = Positon(
-        data["departament"],
-        data["salary"],
-        data["position"]
-    )
-    session.add(position)
-    session.commit()
-    data1 = session.query(Positon) \
-    .filter(Positon.position == data["position"]).first()
-    person = People(
-        data["lastname"], 
+    new_person = Person(
+        data["lastname"],
         data["firstname"],
-        data1.id
+        data["position_id"]
     )
-    session.add(person)
-    session.commit()
-    data2 = session.query(People)\
-    .filter(People.first_name == data["firstname"]).first()
-    phone = Phone(
-        data2.id,
+    new_phone = Phone(
         data["phonenumber"]
     )
-    session.add(phone)
+    new_person.phones = [new_phone]
+    session.add(new_person)
+    session.add(new_phone)
     session.commit()
+    session.close()
     return jsonify({"result": "succes"})
 
 
 @app.route("/api/v1/delete_person", methods=["DELETE"])
 def delete_person():
     data = request.get_json(force=True)
-    phone = session.query(Phone).filter(Phone.phone == data["phonenumber"]).first()
-    person_id = phone.person_id
-    session.query(Phone).filter(Phone.phone == data["phonenumber"]).delete()
+    session.query(Person).filter(Person.id == data["id"]).delete()
     session.commit()
-    session.query(People).filter(People.id == person_id).delete()
-    session.commit()
+
+    # phones = session.query(Phone) \
+    # .join(Phone, Person.phones) \
+    # .filter(Person.id == 15) \
+    # .all()
+    # print(phones)
+    # for phone in phones:
+    #     session.delete(phone)
+    # session.commit()
+
+    # phone = session.query(Phone).filter(Phone.phone == data["phonenumber"]).first()
+    # person_id = phone.person_id
+    # session.query(Phone).filter(Phone.phone == data["phonenumber"]).delete()
+    # session.commit()
+    # session.query(Person).filter(Person.id == person_id).delete()
+    # session.commit()
     return jsonify({"result":"success"})
 
 
@@ -112,9 +116,9 @@ def upd_firstname():
     phone = session.query(Phone)\
     .filter(Phone.phone == data["phonenumber"]).first()
     personid = phone.person_id
-    person = session.query(People)\
-    .filter(People.id == personid)\
-    .update({People.first_name: data["firstname_new"]}, synchronize_session = False)
+    person = session.query(Person)\
+    .filter(Person.id == personid)\
+    .update({Person.first_name: data["firstname_new"]}, synchronize_session = False)
     session.commit()
     return jsonify({"result":"success"})
 
@@ -125,9 +129,9 @@ def upd_position():
     phone = session.query(Phone)\
     .filter(Phone.phone == data["phonenumber"]).first()
     personid = phone.person_id
-    person = session.query(People)\
-    .filter(People.id == personid)\
-    .update({People.position_id: data["position_new"]}, synchronize_session = False)
+    person = session.query(Person)\
+    .filter(Person.id == personid)\
+    .update({Person.position_id: data["position_new"]}, synchronize_session = False)
     session.commit()
     return jsonify({"result":"success"})
 
@@ -160,7 +164,7 @@ def positions_info():
         return res 
     except Exception as e:
         app.logger.warning(f"Exeption {e} ocured")
-        abort(Response(e, 401))
+        abort(Response(e, 500))
 
 
 if __name__ == "__main__":

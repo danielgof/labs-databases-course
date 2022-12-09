@@ -180,3 +180,666 @@
 2022-12-09 15:05:42,976 INFO werkzeug Thread-7 (process_request_thread) : 127.0.0.1 - - [09/Dec/2022 15:05:42] "GET /api/v1/get_all_people_data HTTP/1.1" 200 -
 2022-12-09 15:05:42,983 INFO app Thread-8 (process_request_thread) : All users were selected from database
 2022-12-09 15:05:42,983 INFO werkzeug Thread-8 (process_request_thread) : 127.0.0.1 - - [09/Dec/2022 15:05:42] "GET /api/v1/get_all_people_data HTTP/1.1" 200 -
+2022-12-09 22:35:05,865 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2022-12-09 22:35:05,866 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2022-12-09 22:37:53,766 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2022-12-09 22:37:53,766 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2022-12-09 22:37:56,894 INFO werkzeug Thread-1 (process_request_thread) : 127.0.0.1 - - [09/Dec/2022 22:37:56] "POST /api/v1/add_person HTTP/1.1" 200 -
+2022-12-09 22:42:36,318 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2022-12-09 22:42:36,319 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2022-12-09 22:42:40,247 INFO werkzeug Thread-1 (process_request_thread) : 127.0.0.1 - - [09/Dec/2022 22:42:40] "POST /api/v1/add_person HTTP/1.1" 200 -
+2022-12-09 22:45:58,634 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2022-12-09 22:45:58,635 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2022-12-09 22:46:02,571 ERROR app Thread-1 (process_request_thread) : Exception on /api/v1/add_person [POST]
+Traceback (most recent call last):
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\flask\app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\flask\app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\flask\app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\flask\app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\app.py", line 74, in add_person
+    new_person.phones = [new_phone]
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\sqlalchemy\orm\attributes.py", line 460, in __set__
+    self.impl.set(
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\sqlalchemy\orm\attributes.py", line 1588, in set
+    old = self.get(state, dict_, passive=PASSIVE_ONLY_PERSISTENT)
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\sqlalchemy\orm\attributes.py", line 942, in get
+    value = self._fire_loader_callables(state, key, passive)
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\sqlalchemy\orm\attributes.py", line 978, in _fire_loader_callables
+    return self.callable_(state, passive)
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\sqlalchemy\orm\strategies.py", line 863, in _load_for_state
+    raise orm_exc.DetachedInstanceError(
+sqlalchemy.orm.exc.DetachedInstanceError: Parent instance <Person at 0x27117a13b80> is not bound to a Session; lazy load operation of attribute 'phones' cannot proceed (Background on this error at: https://sqlalche.me/e/14/bhk3)
+2022-12-09 22:46:02,609 INFO werkzeug Thread-1 (process_request_thread) : 127.0.0.1 - - [09/Dec/2022 22:46:02] "[35m[1mPOST /api/v1/add_person HTTP/1.1[0m" 500 -
+2022-12-09 22:46:07,287 ERROR app Thread-2 (process_request_thread) : Exception on /api/v1/add_person [POST]
+Traceback (most recent call last):
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1900, in _execute_context
+    self.dialect.do_execute(
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\sqlalchemy\engine\default.py", line 736, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.UniqueViolation: ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "ix_phone_phone"
+DETAIL:  Ключ "(phone)=(+90**********)" уже существует.
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\flask\app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\flask\app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\flask\app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\flask\app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\app.py", line 72, in add_person
+    session.commit()
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\sqlalchemy\orm\session.py", line 1451, in commit
+    self._transaction.commit(_to_root=self.future)
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\sqlalchemy\orm\session.py", line 829, in commit
+    self._prepare_impl()
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\sqlalchemy\orm\session.py", line 808, in _prepare_impl
+    self.session.flush()
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\sqlalchemy\orm\session.py", line 3444, in flush
+    self._flush(objects)
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\sqlalchemy\orm\session.py", line 3583, in _flush
+    with util.safe_reraise():
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\sqlalchemy\util\langhelpers.py", line 70, in __exit__
+    compat.raise_(
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\sqlalchemy\util\compat.py", line 210, in raise_
+    raise exception
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\sqlalchemy\orm\session.py", line 3544, in _flush
+    flush_context.execute()
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 456, in execute
+    rec.execute(self)
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 630, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\sqlalchemy\orm\persistence.py", line 245, in save_obj
+    _emit_insert_statements(
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\sqlalchemy\orm\persistence.py", line 1238, in _emit_insert_statements
+    result = connection._execute_20(
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1705, in _execute_20
+    return meth(self, args_10style, kwargs_10style, execution_options)
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\sqlalchemy\sql\elements.py", line 334, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1572, in _execute_clauseelement
+    ret = self._execute_context(
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1943, in _execute_context
+    self._handle_dbapi_exception(
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\sqlalchemy\engine\base.py", line 2124, in _handle_dbapi_exception
+    util.raise_(
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\sqlalchemy\util\compat.py", line 210, in raise_
+    raise exception
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1900, in _execute_context
+    self.dialect.do_execute(
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\sqlalchemy\engine\default.py", line 736, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.IntegrityError: (psycopg2.errors.UniqueViolation) ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "ix_phone_phone"
+DETAIL:  Ключ "(phone)=(+90**********)" уже существует.
+
+[SQL: INSERT INTO phone (phone) VALUES (%(phone)s) RETURNING phone.id]
+[parameters: {'phone': '+90**********'}]
+(Background on this error at: https://sqlalche.me/e/14/gkpj)
+2022-12-09 22:46:07,369 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [09/Dec/2022 22:46:07] "[35m[1mPOST /api/v1/add_person HTTP/1.1[0m" 500 -
+2022-12-09 22:46:08,691 ERROR app Thread-3 (process_request_thread) : Exception on /api/v1/add_person [POST]
+Traceback (most recent call last):
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\flask\app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\flask\app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\flask\app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\flask\app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\app.py", line 72, in add_person
+    session.commit()
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\sqlalchemy\orm\session.py", line 1451, in commit
+    self._transaction.commit(_to_root=self.future)
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\sqlalchemy\orm\session.py", line 827, in commit
+    self._assert_active(prepared_ok=True)
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\sqlalchemy\orm\session.py", line 601, in _assert_active
+    raise sa_exc.PendingRollbackError(
+sqlalchemy.exc.PendingRollbackError: This Session's transaction has been rolled back due to a previous exception during flush. To begin a new transaction with this Session, first issue Session.rollback(). Original exception was: (psycopg2.errors.UniqueViolation) ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "ix_phone_phone"
+DETAIL:  Ключ "(phone)=(+90**********)" уже существует.
+
+[SQL: INSERT INTO phone (phone) VALUES (%(phone)s) RETURNING phone.id]
+[parameters: {'phone': '+90**********'}]
+(Background on this error at: https://sqlalche.me/e/14/gkpj) (Background on this error at: https://sqlalche.me/e/14/7s2a)
+2022-12-09 22:46:08,692 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [09/Dec/2022 22:46:08] "[35m[1mPOST /api/v1/add_person HTTP/1.1[0m" 500 -
+2022-12-09 22:46:10,181 ERROR app Thread-4 (process_request_thread) : Exception on /api/v1/add_person [POST]
+Traceback (most recent call last):
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\flask\app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\flask\app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\flask\app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\flask\app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\app.py", line 72, in add_person
+    session.commit()
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\sqlalchemy\orm\session.py", line 1451, in commit
+    self._transaction.commit(_to_root=self.future)
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\sqlalchemy\orm\session.py", line 827, in commit
+    self._assert_active(prepared_ok=True)
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\sqlalchemy\orm\session.py", line 601, in _assert_active
+    raise sa_exc.PendingRollbackError(
+sqlalchemy.exc.PendingRollbackError: This Session's transaction has been rolled back due to a previous exception during flush. To begin a new transaction with this Session, first issue Session.rollback(). Original exception was: (psycopg2.errors.UniqueViolation) ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "ix_phone_phone"
+DETAIL:  Ключ "(phone)=(+90**********)" уже существует.
+
+[SQL: INSERT INTO phone (phone) VALUES (%(phone)s) RETURNING phone.id]
+[parameters: {'phone': '+90**********'}]
+(Background on this error at: https://sqlalche.me/e/14/gkpj) (Background on this error at: https://sqlalche.me/e/14/7s2a)
+2022-12-09 22:46:10,181 INFO werkzeug Thread-4 (process_request_thread) : 127.0.0.1 - - [09/Dec/2022 22:46:10] "[35m[1mPOST /api/v1/add_person HTTP/1.1[0m" 500 -
+2022-12-09 22:46:38,464 ERROR app Thread-5 (process_request_thread) : Exception on /api/v1/add_person [POST]
+Traceback (most recent call last):
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\flask\app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\flask\app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\flask\app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\flask\app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\app.py", line 72, in add_person
+    session.commit()
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\sqlalchemy\orm\session.py", line 1451, in commit
+    self._transaction.commit(_to_root=self.future)
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\sqlalchemy\orm\session.py", line 827, in commit
+    self._assert_active(prepared_ok=True)
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\sqlalchemy\orm\session.py", line 601, in _assert_active
+    raise sa_exc.PendingRollbackError(
+sqlalchemy.exc.PendingRollbackError: This Session's transaction has been rolled back due to a previous exception during flush. To begin a new transaction with this Session, first issue Session.rollback(). Original exception was: (psycopg2.errors.UniqueViolation) ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "ix_phone_phone"
+DETAIL:  Ключ "(phone)=(+90**********)" уже существует.
+
+[SQL: INSERT INTO phone (phone) VALUES (%(phone)s) RETURNING phone.id]
+[parameters: {'phone': '+90**********'}]
+(Background on this error at: https://sqlalche.me/e/14/gkpj) (Background on this error at: https://sqlalche.me/e/14/7s2a)
+2022-12-09 22:46:38,465 INFO werkzeug Thread-5 (process_request_thread) : 127.0.0.1 - - [09/Dec/2022 22:46:38] "[35m[1mPOST /api/v1/add_person HTTP/1.1[0m" 500 -
+2022-12-09 22:47:33,567 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2022-12-09 22:47:33,567 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2022-12-09 22:47:39,540 ERROR app Thread-1 (process_request_thread) : Exception on /api/v1/add_person [POST]
+Traceback (most recent call last):
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\flask\app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\flask\app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\flask\app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\flask\app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\app.py", line 74, in add_person
+    new_person.phones = [new_phone]
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\sqlalchemy\orm\attributes.py", line 460, in __set__
+    self.impl.set(
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\sqlalchemy\orm\attributes.py", line 1588, in set
+    old = self.get(state, dict_, passive=PASSIVE_ONLY_PERSISTENT)
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\sqlalchemy\orm\attributes.py", line 942, in get
+    value = self._fire_loader_callables(state, key, passive)
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\sqlalchemy\orm\attributes.py", line 978, in _fire_loader_callables
+    return self.callable_(state, passive)
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\sqlalchemy\orm\strategies.py", line 863, in _load_for_state
+    raise orm_exc.DetachedInstanceError(
+sqlalchemy.orm.exc.DetachedInstanceError: Parent instance <Person at 0x25847113b80> is not bound to a Session; lazy load operation of attribute 'phones' cannot proceed (Background on this error at: https://sqlalche.me/e/14/bhk3)
+2022-12-09 22:47:39,545 INFO werkzeug Thread-1 (process_request_thread) : 127.0.0.1 - - [09/Dec/2022 22:47:39] "[35m[1mPOST /api/v1/add_person HTTP/1.1[0m" 500 -
+2022-12-09 22:48:49,908 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2022-12-09 22:48:49,909 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2022-12-09 22:48:53,455 ERROR app Thread-1 (process_request_thread) : Exception on /api/v1/add_person [POST]
+Traceback (most recent call last):
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1900, in _execute_context
+    self.dialect.do_execute(
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\sqlalchemy\engine\default.py", line 736, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.UndefinedTable: ОШИБКА:  отношение "people" не существует
+LINE 1: INSERT INTO people (last_name, first_name, position_id) VALU...
+                    ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\flask\app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\flask\app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\flask\app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\flask\app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\app.py", line 72, in add_person
+    session.commit()
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\sqlalchemy\orm\session.py", line 1451, in commit
+    self._transaction.commit(_to_root=self.future)
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\sqlalchemy\orm\session.py", line 829, in commit
+    self._prepare_impl()
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\sqlalchemy\orm\session.py", line 808, in _prepare_impl
+    self.session.flush()
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\sqlalchemy\orm\session.py", line 3444, in flush
+    self._flush(objects)
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\sqlalchemy\orm\session.py", line 3583, in _flush
+    with util.safe_reraise():
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\sqlalchemy\util\langhelpers.py", line 70, in __exit__
+    compat.raise_(
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\sqlalchemy\util\compat.py", line 210, in raise_
+    raise exception
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\sqlalchemy\orm\session.py", line 3544, in _flush
+    flush_context.execute()
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 456, in execute
+    rec.execute(self)
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 630, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\sqlalchemy\orm\persistence.py", line 245, in save_obj
+    _emit_insert_statements(
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\sqlalchemy\orm\persistence.py", line 1238, in _emit_insert_statements
+    result = connection._execute_20(
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1705, in _execute_20
+    return meth(self, args_10style, kwargs_10style, execution_options)
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\sqlalchemy\sql\elements.py", line 334, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1572, in _execute_clauseelement
+    ret = self._execute_context(
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1943, in _execute_context
+    self._handle_dbapi_exception(
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\sqlalchemy\engine\base.py", line 2124, in _handle_dbapi_exception
+    util.raise_(
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\sqlalchemy\util\compat.py", line 210, in raise_
+    raise exception
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1900, in _execute_context
+    self.dialect.do_execute(
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\sqlalchemy\engine\default.py", line 736, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.ProgrammingError: (psycopg2.errors.UndefinedTable) ОШИБКА:  отношение "people" не существует
+LINE 1: INSERT INTO people (last_name, first_name, position_id) VALU...
+                    ^
+
+[SQL: INSERT INTO people (last_name, first_name, position_id) VALUES (%(last_name)s, %(first_name)s, %(position_id)s) RETURNING people.id]
+[parameters: {'last_name': 'test', 'first_name': 'test', 'position_id': 3}]
+(Background on this error at: https://sqlalche.me/e/14/f405)
+2022-12-09 22:48:53,466 INFO werkzeug Thread-1 (process_request_thread) : 127.0.0.1 - - [09/Dec/2022 22:48:53] "[35m[1mPOST /api/v1/add_person HTTP/1.1[0m" 500 -
+2022-12-09 22:51:18,387 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2022-12-09 22:51:18,387 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2022-12-09 22:51:22,579 ERROR app Thread-1 (process_request_thread) : Exception on /api/v1/add_person [POST]
+Traceback (most recent call last):
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\flask\app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\flask\app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\flask\app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\flask\app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\app.py", line 74, in add_person
+    new_person.phones = [new_phone]
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\sqlalchemy\orm\attributes.py", line 460, in __set__
+    self.impl.set(
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\sqlalchemy\orm\attributes.py", line 1588, in set
+    old = self.get(state, dict_, passive=PASSIVE_ONLY_PERSISTENT)
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\sqlalchemy\orm\attributes.py", line 942, in get
+    value = self._fire_loader_callables(state, key, passive)
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\sqlalchemy\orm\attributes.py", line 978, in _fire_loader_callables
+    return self.callable_(state, passive)
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\sqlalchemy\orm\strategies.py", line 863, in _load_for_state
+    raise orm_exc.DetachedInstanceError(
+sqlalchemy.orm.exc.DetachedInstanceError: Parent instance <Person at 0x23903913b80> is not bound to a Session; lazy load operation of attribute 'phones' cannot proceed (Background on this error at: https://sqlalche.me/e/14/bhk3)
+2022-12-09 22:51:22,583 INFO werkzeug Thread-1 (process_request_thread) : 127.0.0.1 - - [09/Dec/2022 22:51:22] "[35m[1mPOST /api/v1/add_person HTTP/1.1[0m" 500 -
+2022-12-09 22:52:23,350 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2022-12-09 22:52:23,350 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2022-12-09 22:52:26,273 ERROR app Thread-1 (process_request_thread) : Exception on /api/v1/add_person [POST]
+Traceback (most recent call last):
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1900, in _execute_context
+    self.dialect.do_execute(
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\sqlalchemy\engine\default.py", line 736, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.UniqueViolation: ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "ix_phone_phone"
+DETAIL:  Ключ "(phone)=(+90***78*****)" уже существует.
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\flask\app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\flask\app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\flask\app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\flask\app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\app.py", line 72, in add_person
+    session.commit()
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\sqlalchemy\orm\session.py", line 1451, in commit
+    self._transaction.commit(_to_root=self.future)
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\sqlalchemy\orm\session.py", line 829, in commit
+    self._prepare_impl()
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\sqlalchemy\orm\session.py", line 808, in _prepare_impl
+    self.session.flush()
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\sqlalchemy\orm\session.py", line 3444, in flush
+    self._flush(objects)
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\sqlalchemy\orm\session.py", line 3583, in _flush
+    with util.safe_reraise():
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\sqlalchemy\util\langhelpers.py", line 70, in __exit__
+    compat.raise_(
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\sqlalchemy\util\compat.py", line 210, in raise_
+    raise exception
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\sqlalchemy\orm\session.py", line 3544, in _flush
+    flush_context.execute()
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 456, in execute
+    rec.execute(self)
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 630, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\sqlalchemy\orm\persistence.py", line 245, in save_obj
+    _emit_insert_statements(
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\sqlalchemy\orm\persistence.py", line 1238, in _emit_insert_statements
+    result = connection._execute_20(
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1705, in _execute_20
+    return meth(self, args_10style, kwargs_10style, execution_options)
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\sqlalchemy\sql\elements.py", line 334, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1572, in _execute_clauseelement
+    ret = self._execute_context(
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1943, in _execute_context
+    self._handle_dbapi_exception(
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\sqlalchemy\engine\base.py", line 2124, in _handle_dbapi_exception
+    util.raise_(
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\sqlalchemy\util\compat.py", line 210, in raise_
+    raise exception
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1900, in _execute_context
+    self.dialect.do_execute(
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\sqlalchemy\engine\default.py", line 736, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.IntegrityError: (psycopg2.errors.UniqueViolation) ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "ix_phone_phone"
+DETAIL:  Ключ "(phone)=(+90***78*****)" уже существует.
+
+[SQL: INSERT INTO phone (phone) VALUES (%(phone)s) RETURNING phone.id]
+[parameters: {'phone': '+90***78*****'}]
+(Background on this error at: https://sqlalche.me/e/14/gkpj)
+2022-12-09 22:52:26,280 INFO werkzeug Thread-1 (process_request_thread) : 127.0.0.1 - - [09/Dec/2022 22:52:26] "[35m[1mPOST /api/v1/add_person HTTP/1.1[0m" 500 -
+2022-12-09 22:54:15,499 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2022-12-09 22:54:15,499 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2022-12-09 22:54:18,084 INFO werkzeug Thread-1 (process_request_thread) : 127.0.0.1 - - [09/Dec/2022 22:54:18] "POST /api/v1/add_person HTTP/1.1" 200 -
+2022-12-09 22:56:58,102 WARNING app Thread-2 (process_request_thread) : Exeption type object 'Phone' has no attribute 'person_id' ocured
+2022-12-09 22:56:58,102 ERROR app Thread-2 (process_request_thread) : Exception on /api/v1/get_all_people_data [GET]
+Traceback (most recent call last):
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\flask\app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\flask\app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\flask\app.py", line 2162, in make_response
+    raise TypeError(
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\flask\app.py", line 2158, in make_response
+    rv = self.response_class.force_type(
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\werkzeug\wrappers\response.py", line 268, in force_type
+    response = Response(*run_wsgi_app(response, environ))
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\werkzeug\test.py", line 1260, in run_wsgi_app
+    for item in app_iter:
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\werkzeug\wsgi.py", line 500, in __next__
+    return self._next()
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\werkzeug\wrappers\response.py", line 50, in _iter_encoded
+    for item in iterable:
+TypeError: 'AttributeError' object is not iterable
+The view function did not return a valid response. The return type must be a string, dict, list, tuple with headers or status, Response instance, or WSGI callable, but it was a HTTPException.
+2022-12-09 22:56:58,127 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [09/Dec/2022 22:56:58] "[35m[1mGET /api/v1/get_all_people_data HTTP/1.1[0m" 500 -
+2022-12-09 22:57:25,479 WARNING app Thread-3 (process_request_thread) : Exeption type object 'Phone' has no attribute 'person_id' ocured
+2022-12-09 22:57:25,480 ERROR app Thread-3 (process_request_thread) : Exception on /api/v1/get_all_people_data [GET]
+Traceback (most recent call last):
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\flask\app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\flask\app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\flask\app.py", line 2162, in make_response
+    raise TypeError(
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\flask\app.py", line 2158, in make_response
+    rv = self.response_class.force_type(
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\werkzeug\wrappers\response.py", line 268, in force_type
+    response = Response(*run_wsgi_app(response, environ))
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\werkzeug\test.py", line 1260, in run_wsgi_app
+    for item in app_iter:
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\werkzeug\wsgi.py", line 500, in __next__
+    return self._next()
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\werkzeug\wrappers\response.py", line 50, in _iter_encoded
+    for item in iterable:
+TypeError: 'AttributeError' object is not iterable
+The view function did not return a valid response. The return type must be a string, dict, list, tuple with headers or status, Response instance, or WSGI callable, but it was a HTTPException.
+2022-12-09 22:57:25,481 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [09/Dec/2022 22:57:25] "[35m[1mGET /api/v1/get_all_people_data HTTP/1.1[0m" 500 -
+2022-12-09 22:58:18,589 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2022-12-09 22:58:18,590 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2022-12-09 22:58:21,700 ERROR app Thread-1 (process_request_thread) : Exception on /api/v1/get_all_people_data [GET]
+Traceback (most recent call last):
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\flask\app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\flask\app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\flask\app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\flask\app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\app.py", line 33, in get_all_data
+    phone_num = session.query(Phone).filter(Phone.person_id == person.id).first()
+AttributeError: type object 'Phone' has no attribute 'person_id'
+2022-12-09 22:58:21,703 INFO werkzeug Thread-1 (process_request_thread) : 127.0.0.1 - - [09/Dec/2022 22:58:21] "[35m[1mGET /api/v1/get_all_people_data HTTP/1.1[0m" 500 -
+2022-12-09 23:02:56,977 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2022-12-09 23:02:56,978 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2022-12-09 23:02:58,663 INFO werkzeug Thread-1 (process_request_thread) : 127.0.0.1 - - [09/Dec/2022 23:02:58] "GET /api/v1/get_all_people_data HTTP/1.1" 200 -
+2022-12-09 23:04:53,080 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2022-12-09 23:04:53,080 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2022-12-09 23:04:55,641 INFO werkzeug Thread-1 (process_request_thread) : 127.0.0.1 - - [09/Dec/2022 23:04:55] "GET /api/v1/get_all_people_data HTTP/1.1" 200 -
+2022-12-09 23:05:15,218 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2022-12-09 23:05:15,218 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2022-12-09 23:05:17,696 ERROR app Thread-1 (process_request_thread) : Exception on /api/v1/get_all_people_data [GET]
+Traceback (most recent call last):
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\flask\app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\flask\app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\flask\app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\flask\app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\app.py", line 36, in get_all_data
+    print(phone_num.phone)
+AttributeError: 'list' object has no attribute 'phone'
+2022-12-09 23:05:17,698 INFO werkzeug Thread-1 (process_request_thread) : 127.0.0.1 - - [09/Dec/2022 23:05:17] "[35m[1mGET /api/v1/get_all_people_data HTTP/1.1[0m" 500 -
+2022-12-09 23:05:34,554 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2022-12-09 23:05:34,554 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2022-12-09 23:05:35,922 INFO werkzeug Thread-1 (process_request_thread) : 127.0.0.1 - - [09/Dec/2022 23:05:35] "GET /api/v1/get_all_people_data HTTP/1.1" 200 -
+2022-12-09 23:06:26,018 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2022-12-09 23:06:26,019 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2022-12-09 23:06:27,380 INFO werkzeug Thread-1 (process_request_thread) : 127.0.0.1 - - [09/Dec/2022 23:06:27] "GET /api/v1/get_all_people_data HTTP/1.1" 200 -
+2022-12-09 23:07:09,186 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2022-12-09 23:07:09,186 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2022-12-09 23:07:11,112 INFO app Thread-1 (process_request_thread) : All users were selected from database
+2022-12-09 23:07:11,113 INFO werkzeug Thread-1 (process_request_thread) : 127.0.0.1 - - [09/Dec/2022 23:07:11] "GET /api/v1/get_all_people_data HTTP/1.1" 200 -
+2022-12-09 23:08:13,582 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2022-12-09 23:08:13,582 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2022-12-09 23:08:15,346 INFO app Thread-1 (process_request_thread) : All users were selected from database
+2022-12-09 23:08:15,347 INFO werkzeug Thread-1 (process_request_thread) : 127.0.0.1 - - [09/Dec/2022 23:08:15] "GET /api/v1/get_all_people_data HTTP/1.1" 200 -
+2022-12-09 23:16:26,786 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2022-12-09 23:16:26,787 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2022-12-09 23:16:30,657 INFO app Thread-1 (process_request_thread) : All users were selected from database
+2022-12-09 23:16:30,658 INFO werkzeug Thread-1 (process_request_thread) : 127.0.0.1 - - [09/Dec/2022 23:16:30] "GET /api/v1/get_all_people_data HTTP/1.1" 200 -
+2022-12-09 23:19:00,325 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2022-12-09 23:19:00,326 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2022-12-09 23:19:14,213 ERROR app Thread-1 (process_request_thread) : Exception on /api/v1/delete_person [DELETE]
+Traceback (most recent call last):
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\flask\app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\flask\app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\flask\app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\flask\app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\app.py", line 85, in delete_person
+    .delete()
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\sqlalchemy\orm\query.py", line 3210, in delete
+    bulk_del = BulkDelete(self)
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\sqlalchemy\orm\query.py", line 3472, in __init__
+    self._validate_query_state()
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\sqlalchemy\orm\query.py", line 3496, in _validate_query_state
+    raise sa_exc.InvalidRequestError(
+sqlalchemy.exc.InvalidRequestError: Can't call Query.update() or Query.delete() when join(), outerjoin(), select_from(), or from_self() has been called
+2022-12-09 23:19:14,225 INFO werkzeug Thread-1 (process_request_thread) : 127.0.0.1 - - [09/Dec/2022 23:19:14] "[35m[1mDELETE /api/v1/delete_person HTTP/1.1[0m" 500 -
+2022-12-09 23:20:46,693 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2022-12-09 23:20:46,693 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2022-12-09 23:20:50,368 INFO werkzeug Thread-1 (process_request_thread) : 127.0.0.1 - - [09/Dec/2022 23:20:50] "DELETE /api/v1/delete_person HTTP/1.1" 200 -
+2022-12-09 23:22:24,247 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2022-12-09 23:22:24,247 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2022-12-09 23:22:28,290 ERROR app Thread-1 (process_request_thread) : Exception on /api/v1/delete_person [DELETE]
+Traceback (most recent call last):
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1900, in _execute_context
+    self.dialect.do_execute(
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\sqlalchemy\engine\default.py", line 736, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.ForeignKeyViolation: ОШИБКА:  UPDATE или DELETE в таблице "people" нарушает ограничение внешнего ключа "movies_actors_people_id_fkey" таблицы "movies_actors"
+DETAIL:  На ключ (id)=(15) всё ещё есть ссылки в таблице "movies_actors".
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\flask\app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\flask\app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\flask\app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\flask\app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\app.py", line 81, in delete_person
+    session.query(Person).filter(Person.id == data["id"]).delete()
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\sqlalchemy\orm\query.py", line 3221, in delete
+    result = self.session.execute(
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\sqlalchemy\orm\session.py", line 1714, in execute
+    result = conn._execute_20(statement, params or {}, execution_options)
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1705, in _execute_20
+    return meth(self, args_10style, kwargs_10style, execution_options)
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\sqlalchemy\sql\elements.py", line 334, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1572, in _execute_clauseelement
+    ret = self._execute_context(
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1943, in _execute_context
+    self._handle_dbapi_exception(
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\sqlalchemy\engine\base.py", line 2124, in _handle_dbapi_exception
+    util.raise_(
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\sqlalchemy\util\compat.py", line 210, in raise_
+    raise exception
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1900, in _execute_context
+    self.dialect.do_execute(
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\sqlalchemy\engine\default.py", line 736, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.IntegrityError: (psycopg2.errors.ForeignKeyViolation) ОШИБКА:  UPDATE или DELETE в таблице "people" нарушает ограничение внешнего ключа "movies_actors_people_id_fkey" таблицы "movies_actors"
+DETAIL:  На ключ (id)=(15) всё ещё есть ссылки в таблице "movies_actors".
+
+[SQL: DELETE FROM people WHERE people.id = %(id_1)s]
+[parameters: {'id_1': 15}]
+(Background on this error at: https://sqlalche.me/e/14/gkpj)
+2022-12-09 23:22:28,299 INFO werkzeug Thread-1 (process_request_thread) : 127.0.0.1 - - [09/Dec/2022 23:22:28] "[35m[1mDELETE /api/v1/delete_person HTTP/1.1[0m" 500 -
+2022-12-09 23:23:03,837 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2022-12-09 23:23:03,837 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2022-12-09 23:23:05,771 ERROR app Thread-1 (process_request_thread) : Exception on /api/v1/delete_person [DELETE]
+Traceback (most recent call last):
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1900, in _execute_context
+    self.dialect.do_execute(
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\sqlalchemy\engine\default.py", line 736, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.ForeignKeyViolation: ОШИБКА:  UPDATE или DELETE в таблице "people" нарушает ограничение внешнего ключа "movies_actors_people_id_fkey" таблицы "movies_actors"
+DETAIL:  На ключ (id)=(15) всё ещё есть ссылки в таблице "movies_actors".
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\flask\app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\flask\app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\flask\app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\flask\app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\app.py", line 81, in delete_person
+    session.query(Person).filter(Person.id == data["id"]).delete()
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\sqlalchemy\orm\query.py", line 3221, in delete
+    result = self.session.execute(
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\sqlalchemy\orm\session.py", line 1714, in execute
+    result = conn._execute_20(statement, params or {}, execution_options)
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1705, in _execute_20
+    return meth(self, args_10style, kwargs_10style, execution_options)
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\sqlalchemy\sql\elements.py", line 334, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1572, in _execute_clauseelement
+    ret = self._execute_context(
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1943, in _execute_context
+    self._handle_dbapi_exception(
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\sqlalchemy\engine\base.py", line 2124, in _handle_dbapi_exception
+    util.raise_(
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\sqlalchemy\util\compat.py", line 210, in raise_
+    raise exception
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1900, in _execute_context
+    self.dialect.do_execute(
+  File "C:\Users\ACER\Documents\2022_fall\БД\labs\main_project\server\venv\lib\site-packages\sqlalchemy\engine\default.py", line 736, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.IntegrityError: (psycopg2.errors.ForeignKeyViolation) ОШИБКА:  UPDATE или DELETE в таблице "people" нарушает ограничение внешнего ключа "movies_actors_people_id_fkey" таблицы "movies_actors"
+DETAIL:  На ключ (id)=(15) всё ещё есть ссылки в таблице "movies_actors".
+
+[SQL: DELETE FROM people WHERE people.id = %(id_1)s]
+[parameters: {'id_1': 15}]
+(Background on this error at: https://sqlalche.me/e/14/gkpj)
+2022-12-09 23:23:05,779 INFO werkzeug Thread-1 (process_request_thread) : 127.0.0.1 - - [09/Dec/2022 23:23:05] "[35m[1mDELETE /api/v1/delete_person HTTP/1.1[0m" 500 -
