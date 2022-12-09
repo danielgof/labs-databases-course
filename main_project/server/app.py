@@ -132,6 +132,37 @@ def upd_position():
     return jsonify({"result":"success"})
 
 
+@app.route("/api/v1/add_position", methods=["POST"])
+def add_position():
+    data = request.get_json(force=True)
+    position = Positon(
+        data["departament"],
+        data["salary"],
+        data["position"]
+    )
+    session.add(position)
+    session.commit()
+    return jsonify({"result": "success"})
+
+
+@app.route("/api/v1/positions_info", methods=["GET"])
+def positions_info():
+    try:
+        data = session.query(Positon).all()
+        res = list()
+        for position in data:
+            res.append({
+            "position": position.position,
+            "salary": position.salary,
+            "department": position.departament
+            })
+        app.logger.info("All users were selected from database")
+        return res 
+    except Exception as e:
+        app.logger.warning(f"Exeption {e} ocured")
+        abort(Response(e, 401))
+
+
 if __name__ == "__main__":
     app.run()
 

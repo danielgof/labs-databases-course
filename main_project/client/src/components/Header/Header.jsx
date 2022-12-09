@@ -8,6 +8,7 @@ import './Header.css';
 import MainPage from '../../pages/MainPage/MainPage';
 import Users from '../../pages/Users';
 import AddUser from "../../pages/RegUser";
+import Departments from "../../pages/Departments";
 
 const Header = () => {
   return (
@@ -28,6 +29,7 @@ const Header = () => {
             <Nav className="me-auto">
               <Nav.Link href="/users">Даннные о пользователях</Nav.Link>
               <Nav.Link href="/add_user">Добавить пользователя</Nav.Link>
+              <Nav.Link href="/positions">Должности</Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Container>
@@ -37,6 +39,7 @@ const Header = () => {
           <Route exact path="/" element={<MainPage />} />
           <Route exact path="/users" element={<Users />} />
           <Route exact path="/add_user" element={<AddUser />} />
+          <Route exact path="/positions" element={<Departments />} />
         </Routes>
       </BrowserRouter>
     </>
