@@ -1,4 +1,4 @@
-input {
+.phonenumber-upd input {
     display: block;
     width: 20rem;
     height: 2rem;
@@ -7,6 +7,7 @@ input {
     font-weight: 500;
     margin-bottom: 2rem;
     margin-left: 2%;
+    margin-top: 12%;
     border-radius: 8px;
     box-shadow: 5px;
     border-width: 0 2px 2px 0;

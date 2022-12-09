@@ -44,7 +44,7 @@ const UpdLastname= (props) => {
   
     return (
       <div className="add-user">
-        <form className="add-user-form" onSubmit={handleSubmit}>
+        <form className="lastname-upd" onSubmit={handleSubmit}>
           <input
             type="text"
             value={lastname}
