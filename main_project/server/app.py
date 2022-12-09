@@ -80,6 +80,7 @@ def add_person():
     )
     session.add(phone)
     session.commit()
+    app.logger.info("Person added to the database")
     return jsonify({"result": "succes"})
 
 
@@ -92,6 +93,7 @@ def delete_person():
     session.commit()
     session.query(People).filter(People.id == person_id).delete()
     session.commit()
+    app.logger.info("Person was deleted from the database")
     return jsonify({"result":"success"})
 
 
@@ -103,6 +105,7 @@ def upd_phone():
     .update({Phone.phone: data["phonenumber_new"]}, synchronize_session = False)
     print(phone)
     session.commit()
+    app.logger.info("User's phone was updated")
     return jsonify({"result":"success"})
 
 
@@ -116,6 +119,7 @@ def upd_firstname():
     .filter(People.id == personid)\
     .update({People.first_name: data["firstname_new"]}, synchronize_session = False)
     session.commit()
+    app.logger.info("User's first name was updated")
     return jsonify({"result":"success"})
 
 
@@ -129,6 +133,7 @@ def upd_position():
     .filter(People.id == personid)\
     .update({People.position_id: data["position_new"]}, synchronize_session = False)
     session.commit()
+    app.logger.info("User's position was updated")
     return jsonify({"result":"success"})
 
 
