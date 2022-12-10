@@ -5,7 +5,7 @@ const AddUser = () => {
   const [firstname, setName] = useState("");
   const [lastname, setLastname] = useState("");
   const [position, setPosition] = useState("");
-   const [phonenumber, setPhonenumber] = useState("");
+  const [phonenumber, setPhonenumber] = useState("");
   const [message, setMessage] = useState("");
 
   let handleSubmit = async (e) => {
@@ -14,7 +14,7 @@ const AddUser = () => {
     const body = JSON.stringify({
       firstname: firstname,
       lastname: lastname,
-      position: position,
+      position_id: 4,
       phonenumber: phonenumber
     })
 
@@ -25,7 +25,7 @@ const AddUser = () => {
       console.log(JSON.stringify({
       firstname: firstname,
       lastname: lastname,
-      position: position,
+      position_id: 4,
       phonenumber: phonenumber
       }))
       let res = await fetch("http://localhost:5000/api/v1/add_person", {
@@ -85,8 +85,8 @@ const AddUser = () => {
             <option value="Cambridge">
           </datalist> */}
         <select name="category" value={category} onChange={event => handleCategoryChange(event.target.value)}>
-          <option id="0" >Personal</option>
-          <option id="1" >Work</option>
+          <option id="0">Personal</option>
+          <option id="1">Work</option>
         </select>
         <input
           type="text"

@@ -34,7 +34,7 @@ def get_all_data():
         for person in data:
             phone_num = session.query(Phone) \
             .join(Phone, Person.phones) \
-            .filter(Person.id == 1) \
+            .filter(Person.id == person.id) \
             .first()
             position = session.query(Positon).filter(Positon.id == person.position_id).first()
             if position == None:

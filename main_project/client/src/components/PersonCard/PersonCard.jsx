@@ -19,7 +19,7 @@ const PersonCard = (props, {data}) => {
     e.preventDefault();
     try {
     const body = JSON.stringify({
-      phonenumber: props.phone
+      id: props.id
     })
 
     const headers = new Headers({
@@ -27,7 +27,7 @@ const PersonCard = (props, {data}) => {
         "Content-Length": JSON.stringify(body).length
     })
       console.log(JSON.stringify({
-        phonenumber: props.phone
+        id: props.id
       }))
       let res = await fetch("http://127.0.0.1:5000/api/v1/delete_person", {
         method: "DELETE",

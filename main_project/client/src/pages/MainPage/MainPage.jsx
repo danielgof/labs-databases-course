@@ -8,12 +8,20 @@ const StartPage = () => {
     <div className='container'>
       <div className='block'>
         <h2>Начальная страница</h2>
+        <br></br>
         <NumVisitors />
+        <br></br>
         <div className='main-page-info'>
           <div className='img'>
+            <br></br>
+            <p className='home'>
+              Сервисная архитектура приложения
+            </p>
+            <br></br>
             <img className='img' src={logo} alt="Logo"/>
           </div>
           <div className='text'>
+            <br></br>
             <p className='home'>
             Общая часть
             </p>

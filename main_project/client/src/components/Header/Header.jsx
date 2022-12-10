@@ -8,7 +8,7 @@ import './Header.css';
 import MainPage from '../../pages/MainPage/MainPage';
 import Users from '../../pages/Users';
 import AddUser from "../../pages/RegUser";
-import Departments from "../../pages/Departments";
+import Departments from "../../pages/Departments/Departments";
 
 const Header = () => {
   return (

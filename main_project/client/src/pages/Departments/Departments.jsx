@@ -1,6 +1,6 @@
 import React from 'react'
-import AddDepartment from '../components/AddDepartment/AddDepartment';
-import PositionsInfo from '../components/PositionsInfo/PositionsInfo';
+import AddDepartment from '../../components/AddDepartment/AddDepartment';
+import PositionsInfo from '../../components/PositionsInfo/PositionsInfo';
 import './Departments.css';
 
 const Departments = () => {

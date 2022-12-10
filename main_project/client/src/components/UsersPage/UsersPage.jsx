@@ -40,7 +40,8 @@ const UsersPage = ({ itemsPerPage }) => {
       <div className='block'>
         {currentItems.map((item, i) => (
           <div key={i}>
-            <PersonCard 
+            <PersonCard
+            id={item.id} 
             position={item.position} 
             name={item.first_name}
             lastname={item.last_name}
