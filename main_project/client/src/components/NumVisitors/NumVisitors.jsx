@@ -20,7 +20,7 @@ const NumVisitors = () => {
     // console.log(data.visited);
   return (
     <div>
-      Портал был посещён раз: {data.visited}
+      Портал был посещён {data.visited} раз 
     </div>
   )
 }

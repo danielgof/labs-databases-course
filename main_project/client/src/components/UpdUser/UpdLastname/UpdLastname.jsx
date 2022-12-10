@@ -10,8 +10,8 @@ const UpdLastname= (props) => {
       e.preventDefault();
       try {
       const body = JSON.stringify({
-        lastname: lastname,
-        phonenumber: props.phonenumber
+        id: props.id,
+        lastname_new: lastname
       })
   
       const headers = new Headers({
@@ -19,8 +19,8 @@ const UpdLastname= (props) => {
           "Content-Length": JSON.stringify(body).length
       })
         console.log(JSON.stringify({
-        lastname: lastname,
-        phonenumber: props.phonenumber
+          id: props.id,
+          lastname_new: lastname
         }))
         let res = await fetch("http://localhost:5000/api/v1/upd_lastname", {
           method: "PUT",

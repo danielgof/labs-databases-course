@@ -1,7 +1,7 @@
-.lastname-upd input {
+.position-upd select {
     display: block;
     width: 20rem;
-    height: 2rem;
+    height: 3rem;
     padding: 0.5rem;
     font-size: 1.1em;
     font-weight: 500;

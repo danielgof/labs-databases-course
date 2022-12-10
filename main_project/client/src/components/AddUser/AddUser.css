@@ -1,21 +1,7 @@
-input {
+.add-user-data {
   display: block;
   width: 20rem;
-  height: 2rem;
-  padding: 0.5rem;
-  font-size: 1.1em;
-  font-weight: 500;
-  margin-bottom: 2rem;
-  margin-left: 37%;
-  border-radius: 8px;
-  box-shadow: 5px;
-  border-width: 0 2px 2px 0;
-}
-
-select {
-  display: block;
-  width: 20rem;
-  height: 2rem;
+  height: 3rem;
   padding: 0.5rem;
   font-size: 1.1em;
   font-weight: 500;

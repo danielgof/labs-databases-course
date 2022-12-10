@@ -64,6 +64,7 @@ def positions_info():
         res = list()
         for position in data:
             res.append({
+            "id":position.id,
             "position": position.position,
             "salary": position.salary,
             "department": position.departament

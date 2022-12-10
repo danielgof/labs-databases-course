@@ -7,21 +7,73 @@ const AddUser = () => {
   const [position, setPosition] = useState("");
   const [phonenumber, setPhonenumber] = useState("");
   const [message, setMessage] = useState("");
+  const [category, setCategory] = useState('');
+  const position_data = [
+    {
+        "department": "all",
+        "id": 1,
+        "position": "CEO",
+        "salary": "1000000"
+    },
+    {
+        "department": "all",
+        "id": 2,
+        "position": "CTO",
+        "salary": "650000"
+    },
+    {
+        "department": "Audit",
+        "id": 4,
+        "position": "CAE",
+        "salary": "350000"
+    },
+    {
+        "department": "Audit",
+        "id": 5,
+        "position": "Auditor",
+        "salary": "150000"
+    },
+    {
+        "department": "Artificial Intelligence",
+        "id": 6,
+        "position": "CAIO",
+        "salary": "400000"
+    },
+    {
+        "department": "Artificial Intelligence",
+        "id": 7,
+        "position": "DS",
+        "salary": "200000"
+    },
+    {
+        "department": "test1",
+        "id": 3,
+        "position": "test1",
+        "salary": "test1"
+    },
+    {
+        "department": "new department",
+        "id": 9,
+        "position": "Sr. SE",
+        "salary": "10000000"
+    }
+];
 
   let handleSubmit = async (e) => {
     e.preventDefault();
     try {
-    const body = JSON.stringify({
-      firstname: firstname,
-      lastname: lastname,
-      position_id: 4,
-      phonenumber: phonenumber
-    })
+      setCategory(category);
+      const body = JSON.stringify({
+        firstname: firstname,
+        lastname: lastname,
+        position_id: 4,
+        phonenumber: phonenumber
+      })
 
-    const headers = new Headers({
-        "Content-Type": "application/json",
-        "Content-Length": JSON.stringify(body).length
-    })
+      const headers = new Headers({
+          "Content-Type": "application/json",
+          "Content-Length": JSON.stringify(body).length
+      })
       console.log(JSON.stringify({
       firstname: firstname,
       lastname: lastname,
@@ -51,44 +103,39 @@ const AddUser = () => {
     }
   };
 
-  const [category, setCategory] = useState('');
-
-  const handleCategoryChange = (category) => {
-     setCategory(category);
-     console.log(category);
-  }
-
   return (
     <div className="add-user">
       <form className="add-user-form" onSubmit={handleSubmit}>
-        <input
+        <input className="add-user-data"
           type="text"
           value={firstname}
           placeholder="имя"
           onChange={(e) => setName(e.target.value)}
         />
-        <input
+        <input className="add-user-data"
           type="text"
           value={lastname}
           placeholder="фамилия"
           onChange={(e) => setLastname(e.target.value)}
         />
-        <input
+        <input className="add-user-data"
           type="text"
           value={position}
           placeholder="должность"
           list="positions"
           onChange={(e) => setPosition(e.target.value)}
         />
-          {/* <datalist id="positions">
-            <option value="Boston">
-            <option value="Cambridge">
-          </datalist> */}
-        <select name="category" value={category} onChange={event => handleCategoryChange(event.target.value)}>
-          <option id="0">Personal</option>
-          <option id="1">Work</option>
-        </select>
-        <input
+        <select className="add-user-data" 
+          name="category" 
+          value={category} 
+          onChange={(e) => setPosition(e.target.value[0])}
+          placeholder="Должность"
+          >
+            {position_data.map((item, i) => (
+              <option id={item.id} key={i}>{item.id} {item.department} {item.position}</option>
+            ))}
+          </select>
+        <input className="add-user-data"
           type="text"
           value={phonenumber}
           placeholder="номер телефона"

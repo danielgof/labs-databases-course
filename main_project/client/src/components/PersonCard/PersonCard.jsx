@@ -7,6 +7,7 @@ import './PersonCard.css';
 import UpdFirstname from '../UpdUser/UpdFirstname/UpdFirstname';
 import UpdLastname from '../UpdUser/UpdLastname/UpdLastname';
 import UpdPhonenum from '../UpdUser/UpdPhonenum/UpdPhonenum';
+import UpdUserPosition from '../UpdUser/UpdUserPosition/UpdUserPosition';
 
 
 const PersonCard = (props, {data}) => {
@@ -100,12 +101,13 @@ const PersonCard = (props, {data}) => {
                 className="rounded me-2"
                 alt=""
               />
-              <strong className="me-auto">Доп.инфа</strong>
+              <strong className="me-auto">изменение информации пользователя</strong>
             </Toast.Header>
             <Toast.Body>
-              <UpdFirstname phonenumber={props.phone}/>
-              <UpdLastname phonenumber={props.phone}/>
-              <UpdPhonenum phonenumber={props.phone}/>
+              <UpdFirstname id={props.id}/>
+              <UpdLastname id={props.id}/>
+              <UpdPhonenum id={props.id}/>
+              <UpdUserPosition id={props.id}/>
             </Toast.Body>
           </Toast>
       </Card.Body>
