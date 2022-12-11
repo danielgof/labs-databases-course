@@ -46,12 +46,6 @@ const AddUser = () => {
         "salary": "200000"
     },
     {
-        "department": "test1",
-        "id": 3,
-        "position": "test1",
-        "salary": "test1"
-    },
-    {
         "department": "new department",
         "id": 9,
         "position": "Sr. SE",
@@ -66,7 +60,7 @@ const AddUser = () => {
       const body = JSON.stringify({
         firstname: firstname,
         lastname: lastname,
-        position_id: 4,
+        position_id: +position,
         phonenumber: phonenumber
       })
 
@@ -77,7 +71,7 @@ const AddUser = () => {
       console.log(JSON.stringify({
       firstname: firstname,
       lastname: lastname,
-      position_id: 4,
+      position_id: +position,
       phonenumber: phonenumber
       }))
       let res = await fetch("http://localhost:5000/api/v1/add_person", {
@@ -118,15 +112,7 @@ const AddUser = () => {
           placeholder="фамилия"
           onChange={(e) => setLastname(e.target.value)}
         />
-        <input className="add-user-data"
-          type="text"
-          value={position}
-          placeholder="должность"
-          list="positions"
-          onChange={(e) => setPosition(e.target.value)}
-        />
-        <select className="add-user-data" 
-          name="category" 
+        <select name="category" 
           value={category} 
           onChange={(e) => setPosition(e.target.value[0])}
           placeholder="Должность"
@@ -134,11 +120,12 @@ const AddUser = () => {
             {position_data.map((item, i) => (
               <option id={item.id} key={i}>{item.id} {item.department} {item.position}</option>
             ))}
-          </select>
+        </select>
         <input className="add-user-data"
-          type="text"
+          type="tel"
           value={phonenumber}
           placeholder="номер телефона"
+          pattern = "\(?(\d{3})\)?[-\.\s]?(\d{3})[-\.\s]?(\d{4})"
           onChange={(e) => setPhonenumber(e.target.value)}
         />
 

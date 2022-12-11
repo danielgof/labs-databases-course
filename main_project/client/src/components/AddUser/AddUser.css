@@ -12,6 +12,21 @@
   border-width: 0 2px 2px 0;
 }
 
+.add-user-form select {
+  display: block;
+  width: 20rem;
+  height: 3rem;
+  padding: 0.5rem;
+  font-size: 1.1em;
+  font-weight: 500;
+  margin-bottom: 2rem;
+  margin-left: 37%;
+  margin-top: 2%;
+  border-radius: 8px;
+  box-shadow: 5px;
+  border-width: 0 2px 2px 0;
+}
+
 .btn-add-user {
   background-color: rgb(199, 218, 235);
 }

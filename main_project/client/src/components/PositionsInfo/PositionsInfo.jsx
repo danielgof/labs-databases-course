@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import DeleteDepartment from '../DeleteDepartment/DeleteDepartment';
 import './PositionsInfo.css';
 
 const PositionsInfo = () => {
@@ -35,6 +36,10 @@ const PositionsInfo = () => {
             <td>{item.department}</td>
             <td>{item.salary}</td>
             <td>{item.position}</td>
+            <DeleteDepartment 
+              id={item.id}
+              position={item.position}
+            />
             <br></br>
           </tr>
         ))}

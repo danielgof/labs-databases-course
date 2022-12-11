@@ -8,14 +8,18 @@ import UpdFirstname from '../UpdUser/UpdFirstname/UpdFirstname';
 import UpdLastname from '../UpdUser/UpdLastname/UpdLastname';
 import UpdPhonenum from '../UpdUser/UpdPhonenum/UpdPhonenum';
 import UpdUserPosition from '../UpdUser/UpdUserPosition/UpdUserPosition';
+import AddPhoneToUser from '../AddPhoneToUser/AddPhoneToUser';
+import DeletePhone from '../DeletePhone/DeletePhone';
 
 
 const PersonCard = (props, {data}) => {
   const [showA, setShowA] = useState(false);
   const [showB, setShowB] = useState(false);
+  const [showC, setShowC] = useState(false);
   const [message, setMessage] = useState("");
   const toggleShowA = () => setShowA(!showA);
   const toggleShowB = () => setShowB(!showB);
+  const toggleShowC = () => setShowC(!showC);
   const handleClick = async (e) => {
     e.preventDefault();
     try {
@@ -75,7 +79,11 @@ const PersonCard = (props, {data}) => {
           </Button>
           <Button className='btn-dop-info'
             onClick={toggleShowB}>
-            Изменить информацию пользователя
+            Изменить информацию пользователю
+          </Button>
+          <Button className='btn-dop-info'
+            onClick={toggleShowC}>
+            Добавить телефон пользователю
           </Button>
           <Toast show={showA} onClose={toggleShowA}>
             <Toast.Header>
@@ -91,7 +99,13 @@ const PersonCard = (props, {data}) => {
               <br />
               Отдел: {props.department}
               <br />
-              Номер телефона: {props.phone}
+              Номера телефона: 
+              {props.phone.map((phone, i) => (
+                <div key={i}>
+                  {phone}
+                  <DeletePhone phone={phone}/>
+                </div>
+              ))}
             </Toast.Body>
           </Toast>
           <Toast show={showB} onClose={toggleShowB}>
@@ -108,6 +122,19 @@ const PersonCard = (props, {data}) => {
               <UpdLastname id={props.id}/>
               <UpdPhonenum id={props.id}/>
               <UpdUserPosition id={props.id}/>
+            </Toast.Body>
+          </Toast>
+          <Toast show={showC} onClose={toggleShowC}>
+            <Toast.Header>
+              <img
+                src="holder.js/20x20?text=%20"
+                className="rounded me-2"
+                alt=""
+              />
+              <strong className="me-auto">Добавить телефон пользователю</strong>
+            </Toast.Header>
+            <Toast.Body>
+              <AddPhoneToUser id={props.id}/>
             </Toast.Body>
           </Toast>
       </Card.Body>

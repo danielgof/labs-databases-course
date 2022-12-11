@@ -48,7 +48,7 @@ class Person(Base):
     id = Column(Integer, primary_key=True)
     last_name = Column(String, nullable=False)
     first_name = Column(String, nullable=False)
-    position_id = Column(Integer, ForeignKey("position.id"))
+    position_id = Column(Integer, ForeignKey("position.id", ondelete='CASCADE'))
     phones = relationship("Phone", secondary=people_phones_association)
 
     def __init__(self, last_name, first_name, position_id):
