@@ -29,6 +29,7 @@ const PositionsInfo = () => {
         <th>Отдел</th>
         <th>Зарплата(руб.)</th>
         <th>Должность</th>
+        <th>Удалить должность</th>
         </tr>
       </thead>
       {data.map((item, i) => (

@@ -101,9 +101,17 @@ const PersonCard = (props, {data}) => {
               <br />
               Номера телефона: 
               {props.phone.map((phone, i) => (
-                <div key={i}>
-                  {phone}
-                  <DeletePhone phone={phone}/>
+                <div className='person-card-phone' key={i}>
+                  <table>
+                    <tr>
+                      <td>
+                        {phone} 
+                      </td>
+                      <td>
+                        <DeletePhone className='person-card-phone-del-btn' phone={phone}/>
+                      </td>
+                    </tr>
+                  </table>
                 </div>
               ))}
             </Toast.Body>

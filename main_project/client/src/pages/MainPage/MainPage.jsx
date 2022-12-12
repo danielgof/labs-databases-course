@@ -15,7 +15,7 @@ const StartPage = () => {
           <div className='img'>
             <br></br>
             <p className='home'>
-              Сервисная архитектура приложения
+              Архитектура приложения
             </p>
             <br></br>
             <img className='img' src={logo} alt="Logo"/>

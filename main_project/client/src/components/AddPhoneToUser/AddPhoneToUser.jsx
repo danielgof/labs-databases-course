@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './AddPhoneToUser.css';
 
 const AddPhoneToUser = (props) => {
     const [phone, setPhone] = useState("");
@@ -46,7 +47,7 @@ const AddPhoneToUser = (props) => {
           <input
             type="text"
             value={phone}
-            placeholder="введите телефон"
+            placeholder="введите телефон в формате: ***-***-****"
             onChange={(e) => setPhone(e.target.value)}
           />  
           <button className="btn-add-user" type="submit">
