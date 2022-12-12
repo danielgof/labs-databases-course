@@ -3,7 +3,9 @@ from sqlalchemy.orm import sessionmaker, relationship
 from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 
-engine = create_engine('postgresql://postgres:admin@localhost:5432/lab')
+from utils import *
+username, password, dbname = get_configs()
+engine = create_engine(f"postgresql://{username}:{password}@localhost:5432/{dbname}")
 Session = sessionmaker(bind=engine)
 print("session created succesfully")
 
