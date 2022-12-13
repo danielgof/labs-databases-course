@@ -10,8 +10,8 @@ const UpdPhonenum = (props) => {
       e.preventDefault();
       try {
       const body = JSON.stringify({
-        phonenumber_new: phonenumber_new,
-        phonenumber: props.phonenumber
+        phonenumber_old: props.phone,
+        phonenumber_new
       })
   
       const headers = new Headers({
@@ -19,7 +19,7 @@ const UpdPhonenum = (props) => {
           "Content-Length": JSON.stringify(body).length
       })
         console.log(JSON.stringify({
-        phonenumber_old: props.phonenumber,
+        phonenumber_old: props.phone,
         phonenumber_new
         }))
         let res = await fetch("http://localhost:5000/api/v1/upd_phone", {

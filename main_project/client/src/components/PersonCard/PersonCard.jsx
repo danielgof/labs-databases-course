@@ -108,6 +108,9 @@ const PersonCard = (props, {data}) => {
                         +7{phone} 
                       </td>
                       <td>
+                        <UpdPhonenum phone={phone}/>
+                      </td>
+                      <td>
                         <DeletePhone className='person-card-phone-del-btn' phone={phone}/>
                       </td>
                     </tr>
@@ -128,7 +131,7 @@ const PersonCard = (props, {data}) => {
             <Toast.Body>
               <UpdFirstname id={props.id}/>
               <UpdLastname id={props.id}/>
-              <UpdPhonenum id={props.id}/>
+              {/* <UpdPhonenum id={props.id}/> */}
               <UpdUserPosition id={props.id}/>
             </Toast.Body>
           </Toast>

@@ -174,7 +174,7 @@ def upd_phone():
 
 
 @app.route("/api/v1/upd_firstname", methods=["PUT"])
-def upd_firstname():
+def upd_firstname(): 
     data = request.get_json(force=True)
     session.query(Person)\
     .filter(Person.id == data["id"])\
