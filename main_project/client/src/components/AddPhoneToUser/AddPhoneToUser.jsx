@@ -30,7 +30,7 @@ const AddPhoneToUser = (props) => {
         // let resJson = await res.json();
         if (res.status === 200) {
             setPhone("");
-          setMessage("Данные успешно изменены");
+          setMessage("Новый номер телефона успешно добавлен");
           // navigate("/home");
         } 
         else {
@@ -47,11 +47,12 @@ const AddPhoneToUser = (props) => {
           <input
             type="text"
             value={phone}
-            placeholder="введите телефон в формате: ***-***-****"
+            placeholder="введите телефон в формате: **********"
+            pattern = "[0-9]{10}"
             onChange={(e) => setPhone(e.target.value)}
           />  
           <button className="btn-add-user" type="submit">
-            Изменить информацию пользователю
+            Добавить телефон пользователю
           </button>
   
           <div className="message">{message ? <p>{message}</p> : null}</div>

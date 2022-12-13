@@ -43,12 +43,6 @@ const UpdUserPosition = (props) => {
           "salary": "200000"
       },
       {
-          "department": "test1",
-          "id": 3,
-          "position": "test1",
-          "salary": "test1"
-      },
-      {
           "department": "new department",
           "id": 9,
           "position": "Sr. SE",

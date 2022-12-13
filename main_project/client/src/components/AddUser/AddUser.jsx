@@ -86,7 +86,7 @@ const AddUser = () => {
         setLastname("");
         setPhonenumber("");
         setPosition("");
-        setMessage("User added to database successfully");
+        setMessage("Пользователь успешно добавлен в базу данных");
         // navigate("/home");
       } 
       else {
@@ -104,12 +104,14 @@ const AddUser = () => {
           type="text"
           value={firstname}
           placeholder="имя"
+          pattern = "[0-9]{30}"
           onChange={(e) => setName(e.target.value)}
         />
         <input className="add-user-data"
           type="text"
           value={lastname}
           placeholder="фамилия"
+          pattern = "[0-9]{30}"
           onChange={(e) => setLastname(e.target.value)}
         />
         <select name="category" 
@@ -124,8 +126,8 @@ const AddUser = () => {
         <input className="add-user-data"
           type="tel"
           value={phonenumber}
-          placeholder="номер телефона"
-          pattern = "\(?(\d{3})\)?[-\.\s]?(\d{3})[-\.\s]?(\d{4})"
+          placeholder="введите телефон в формате: **********"
+          pattern = "[0-9]{10}"
           onChange={(e) => setPhonenumber(e.target.value)}
         />
 

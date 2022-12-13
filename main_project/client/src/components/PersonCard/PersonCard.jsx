@@ -105,7 +105,7 @@ const PersonCard = (props, {data}) => {
                   <table>
                     <tr>
                       <td>
-                        {phone} 
+                        +7{phone} 
                       </td>
                       <td>
                         <DeletePhone className='person-card-phone-del-btn' phone={phone}/>

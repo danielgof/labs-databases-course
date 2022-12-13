@@ -49,6 +49,7 @@ const UpdLastname= (props) => {
             type="text"
             value={lastname}
             placeholder="фамилия"
+            pattern = "[0-9]{30}"
             onChange={(e) => setName(e.target.value)}
           />  
           <button className="btn-add-user" type="submit">

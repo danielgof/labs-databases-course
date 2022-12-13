@@ -54,18 +54,21 @@ const AddDepartment = () => {
           type="text"
           value={position}
           placeholder="должность"
+          pattern = "[0-9]{30}"
           onChange={(e) => setPosition(e.target.value)}
         />
         <input
           type="text"
           value={departament}
           placeholder="отдел"
+          pattern = "[0-9]{30}"
           onChange={(e) => setDepartment(e.target.value)}
         />
         <input
           type="text"
           value={salary}
           placeholder="зарплата"
+          pattern = "[0-9]{30}"
           onChange={(e) => setSalary(e.target.value)}
         />
 

@@ -48,7 +48,8 @@ const UpdPhonenum = (props) => {
           <input
             type="text"
             value={phonenumber_new}
-            placeholder="номер телефона"
+            placeholder="введите телефон в формате: **********"
+            pattern = "[0-9]{10}"
             onChange={(e) => setNumber(e.target.value)}
           />  
           <button className="btn-add-user" type="submit">

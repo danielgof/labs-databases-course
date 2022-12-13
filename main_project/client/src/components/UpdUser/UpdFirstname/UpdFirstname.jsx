@@ -49,6 +49,7 @@ const UpdFirstname = (props) => {
             type="text"
             value={firstname}
             placeholder="имя"
+            pattern = "[0-9]{30}"
             onChange={(e) => setName(e.target.value)}
           />  
           <button className="btn-add-user" type="submit">
