@@ -1,6 +1,6 @@
 database:
   username:
-    postgres
+    daniel
   password:
     admin
   dbname:

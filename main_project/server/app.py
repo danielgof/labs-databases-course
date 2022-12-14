@@ -12,7 +12,7 @@ session = Session()
 app = Flask(__name__)
 CORS(app)
 cache = redis.Redis(host='127.0.0.1', port=6379)
-print("hello")
+
 
 if not os.path.isdir("./log"):
     os.mkdir("./log")
