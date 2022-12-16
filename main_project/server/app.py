@@ -18,6 +18,12 @@ if not os.path.isdir("./log"):
     os.mkdir("./log")
 logging.basicConfig(filename=f'./log/{datetime.today().strftime("%Y-%m-%d")}.log', level=logging.DEBUG, format=f'%(asctime)s %(levelname)s %(name)s %(threadName)s : %(message)s')
 
+@app.route("/test", methods=["GET"])
+def index():
+    data = session.query(Person).all()
+    for person in data:
+        print(person.__dict__)
+    return "check console"
 
 @app.route("/api/v1/num_visits", methods=["GET"])
 def num_visits():

@@ -85,7 +85,7 @@ const PersonCard = (props, {data}) => {
             onClick={toggleShowC}>
             Добавить телефон пользователю
           </Button>
-          <Toast show={showA} onClose={toggleShowA}>
+          <Toast className='person-show-dop-info' show={showA} onClose={toggleShowA}>
             <Toast.Header>
               <img
                 src="holder.js/20x20?text=%20"
@@ -102,7 +102,18 @@ const PersonCard = (props, {data}) => {
               Номера телефона: 
               {props.phone.map((phone, i) => (
                 <div className='person-card-phone' key={i}>
-                  <table>
+                  <table className=''>
+                    <th>
+                      <td>
+                        телефон
+                      </td>
+                      <td>
+                        телефон
+                      </td>
+                      <td>
+                        телефон
+                      </td>
+                    </th>
                     <tr>
                       <td>
                         +7{phone} 
