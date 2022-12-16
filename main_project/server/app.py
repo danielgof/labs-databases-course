@@ -218,4 +218,4 @@ def upd_position():
     return jsonify({"result":"success"})
 
 if __name__ == "__main__":
-    app.run()
+    app.run(port = 5000, debug = True)
